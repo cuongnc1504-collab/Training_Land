@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hệ thống 90 ngày cho Tư vấn viên mới</title>
+<meta name="description" content="Ghi chép cá nhân về 90 ngày đầu của Tư vấn viên mới — hai lộ trình, KASH, hai phễu, ba tháng và phương pháp JFW.">
+<meta name="author" content="Nguyễn Chí Cương">
+<meta name="theme-color" content="#0C4A38">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2044%2044%22%3E%3Crect%20width%3D%2244%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22%230C4A38%22%2F%3E%3Cpath%20d%3D%22M27%2013.34%20A10%2010%200%201%200%2027%2030.66%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2231.6%22%20cy%3D%2222%22%20r%3D%222.4%22%20fill%3D%22%230B7C55%22%2F%3E%3C%2Fsvg%3E">
+<link rel="canonical" href="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/tvv-90-ngay/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Cuongnc1504 — Kho tư liệu đào tạo">
+<meta property="og:title" content="Hệ thống 90 ngày cho Tư vấn viên mới">
+<meta property="og:description" content="Ghi chép cá nhân về 90 ngày đầu của Tư vấn viên mới — hai lộ trình, KASH, hai phễu, ba tháng và phương pháp JFW.">
+<meta property="og:url" content="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/tvv-90-ngay/">
+<meta property="og:image" content="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/tvv-90-ngay/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+:root{ color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px) }
+body{ margin:0 }
+img{ max-width:100% }
+[hidden]{ display:none !important }
+</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,500;0,600;1,500&display=swap">
+
+<style>
+/* Layout: cột đọc hẹp 72ch trên nền xanh nhạt; các dải trích dẫn tràn ngang;
+   bảng chuyển thành thẻ dọc dưới 720px. */
+:root{
+  --bg:#F4F7FA;
+  --surface:#FFFFFF;
+  --surface-2:#EAF1F7;
+  --ink:#0C1A26;
+  --muted:#566B7E;
+  --line:#D9E3EC;
+  --brand:#0C4A38;
+  --accent:#0B7C55;
+  --accent-soft:#E2F3EC;
+  --stop:#A8452F;
+  --stop-soft:#FBEDEA;
+  --go:#136B52;
+  --go-soft:#E4F1EC;
+  --mark:#0C4A38;
+  --shadow:0 1px 2px rgba(12,26,38,.05), 0 8px 24px -12px rgba(12,26,38,.18);
+  --f-sans:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-serif:"Lora", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+    --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+    --brand:#6FD3A7; --accent:#3FBE8C; --accent-soft:#112D24;
+    --stop:#E59685; --stop-soft:#2A1A17;
+    --go:#64C9A4; --go-soft:#11261F;
+    --mark:#113A2D;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+  --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+  --brand:#6FD3A7; --accent:#3FBE8C; --accent-soft:#112D24;
+  --stop:#E59685; --stop-soft:#2A1A17;
+  --go:#64C9A4; --go-soft:#11261F;
+  --mark:#113A2D;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--f-sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px);
+  background:var(--surface); z-index:30;
+}
+.wrap{
+  max-width:860px; margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+.col{max-width:720px}
+
+/* ---------- header ---------- */
+.bar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--surface); border-bottom:1px solid var(--line);
+}
+.bar .wrap{
+  display:flex; align-items:center; gap:14px;
+  padding-block:11px; flex-wrap:wrap;
+}
+.brandmark{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+.brandmark svg{display:block; flex:none}
+.wordmark{line-height:1.1}
+.wordmark b{font-weight:800; letter-spacing:-.02em; font-size:15px}
+.wordmark span{font-weight:500; color:var(--accent); font-size:15px}
+.wordmark em{
+  display:block; font-style:normal; font-size:10.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:1px;
+}
+.bar nav{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{
+  font-size:12.5px; font-weight:600; color:var(--muted); text-decoration:none;
+  padding:5px 10px; border-radius:999px; white-space:nowrap;
+}
+.bar nav a:hover{color:var(--accent); background:var(--accent-soft)}
+.bar nav a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--surface); border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:40px 34px}
+.eyebrow{
+  font-size:11.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 14px;
+}
+h1{
+  font-family:var(--f-sans); font-weight:800; letter-spacing:-.025em;
+  font-size:clamp(28px,5.4vw,44px); line-height:1.12; margin:0 0 16px;
+  text-wrap:balance; color:var(--ink);
+}
+.lede{font-size:17px; color:var(--muted); margin:0; max-width:62ch}
+.meta{
+  display:flex; flex-wrap:wrap; gap:8px 10px; margin-top:22px;
+  font-size:12.5px; color:var(--muted);
+}
+.meta span{
+  background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; font-weight:500;
+}
+
+/* ---------- sections ---------- */
+section{padding-block:40px}
+section + section{border-top:1px solid var(--line)}
+.kicker{
+  display:flex; align-items:baseline; gap:10px; margin:0 0 6px;
+}
+.kicker i{
+  font-style:normal; font-family:var(--f-sans); font-weight:800; font-size:12px;
+  color:var(--accent); letter-spacing:.08em;
+}
+h2{
+  font-size:clamp(21px,3.4vw,27px); font-weight:800; letter-spacing:-.02em;
+  margin:0 0 10px; line-height:1.22; text-wrap:balance;
+}
+.sub{color:var(--muted); font-size:15px; margin:0 0 24px; max-width:64ch}
+p{margin:0 0 14px}
+
+/* ---------- quote blocks ---------- */
+.quotes{display:grid; gap:14px; margin-top:4px}
+.q{
+  background:var(--brand); color:#fff; border-radius:14px;
+  padding:22px 24px; position:relative; overflow:hidden;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}}
+:root[data-theme="dark"] .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}
+.q p{
+  font-family:var(--f-serif); font-style:italic; font-weight:500;
+  font-size:clamp(17px,2.6vw,20px); line-height:1.45; margin:0;
+}
+.q .mk{
+  position:absolute; right:14px; top:-6px; font-family:var(--f-serif);
+  font-size:72px; line-height:1; opacity:.15; pointer-events:none;
+}
+
+/* ---------- cards ---------- */
+.grid{display:grid; gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:620px){.g2,.g4{grid-template-columns:1fr}}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:18px 18px 16px; min-width:0;
+}
+.card h3{
+  font-size:15.5px; font-weight:700; margin:0 0 7px; letter-spacing:-.01em; line-height:1.3;
+}
+.card p{font-size:14.5px; color:var(--muted); margin:0}
+.tag{
+  display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--accent); margin-bottom:9px;
+}
+
+/* MARS letters */
+.mars{display:grid; gap:12px}
+.mars .row{
+  display:grid; grid-template-columns:52px 1fr; gap:16px; align-items:start;
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px;
+}
+.mars .L{
+  font-weight:800; font-size:26px; line-height:1; color:var(--accent);
+  background:var(--accent-soft); border-radius:10px; display:grid; place-items:center;
+  height:52px; letter-spacing:-.02em;
+}
+.mars h3{font-size:14px; margin:0 0 5px; font-weight:700}
+.mars p{font-size:14.5px; color:var(--muted); margin:0}
+@media (max-width:480px){
+  .mars .row{grid-template-columns:40px 1fr; gap:12px; padding:14px}
+  .mars .L{height:40px; font-size:20px}
+}
+
+/* method list */
+.method{display:grid; gap:12px}
+.method .row{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:16px 18px; display:grid; gap:8px;
+}
+.method .top{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px}
+.method .sig{font-size:14.5px; font-weight:600; flex:1 1 220px; min-width:0}
+.method .use{
+  font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:4px 10px; border-radius:999px;
+  white-space:nowrap;
+}
+.method .why{font-size:14px; color:var(--muted); margin:0; padding-top:2px; border-top:1px dashed var(--line)}
+.method .why::before{content:"Bởi vì "; font-weight:600; color:var(--ink)}
+
+/* rhythm timeline */
+.rhythm{display:grid; gap:0; border-left:2px solid var(--line); margin-left:6px}
+.rhythm li{list-style:none; padding:0 0 20px 22px; position:relative}
+.rhythm li:last-child{padding-bottom:0}
+.rhythm li::before{
+  content:""; position:absolute; left:-7px; top:7px; width:12px; height:12px;
+  border-radius:50%; background:var(--accent); border:3px solid var(--bg);
+}
+.rhythm b{display:block; font-size:15px; letter-spacing:-.01em}
+.rhythm span{color:var(--muted); font-size:14.5px}
+
+/* stop / go */
+.sg{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:640px){.sg{grid-template-columns:1fr}}
+.sg .pane{border-radius:12px; padding:18px; border:1px solid var(--line); min-width:0}
+.sg .stop{background:var(--stop-soft); border-color:color-mix(in srgb, var(--stop) 24%, transparent)}
+.sg .go{background:var(--go-soft); border-color:color-mix(in srgb, var(--go) 24%, transparent)}
+.sg h3{
+  font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  margin:0 0 12px;
+}
+.sg .stop h3{color:var(--stop)}
+.sg .go h3{color:var(--go)}
+.sg ul{margin:0; padding:0; list-style:none; display:grid; gap:11px}
+.sg li{font-size:14.5px; line-height:1.5; padding-left:20px; position:relative}
+.sg li::before{position:absolute; left:0; top:0; font-weight:700}
+.sg .stop li::before{content:"✕"; color:var(--stop)}
+.sg .go li::before{content:"✓"; color:var(--go)}
+
+/* commitment checklist */
+.pledge{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:20px 20px 16px;
+}
+.pledge ol{margin:0; padding:0; list-style:none; display:grid; gap:2px}
+.pledge li{min-width:0}
+.pledge label{
+  display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:start;
+  padding:10px 8px; border-radius:9px; cursor:pointer; font-size:15px; line-height:1.5;
+}
+.pledge label:hover{background:var(--surface-2)}
+.pledge input{
+  width:19px; height:19px; margin:3px 0 0; accent-color:var(--accent); cursor:pointer;
+}
+.pledge input:checked + span{color:var(--muted); text-decoration:line-through; text-decoration-thickness:1px}
+.pledge .foot{
+  margin:12px 0 0; padding-top:12px; border-top:1px solid var(--line);
+  font-size:12.5px; color:var(--muted);
+}
+
+/* models */
+.model{
+  background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:0 12px 12px 0; padding:18px 20px; margin-bottom:14px;
+}
+.model h3{font-size:16px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em}
+.model p{font-size:14.5px; color:var(--muted); margin:0 0 10px}
+.model p:last-child{margin:0}
+.model .pull{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px;
+  color:var(--ink); margin:0; padding-left:14px; border-left:2px solid var(--line);
+}
+.chain{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px}
+.chain b{
+  font-size:12.5px; font-weight:700; background:var(--accent-soft); color:var(--accent);
+  padding:4px 9px; border-radius:7px; letter-spacing:.01em;
+}
+.chain i{font-style:normal; color:var(--muted); align-self:center; font-size:13px}
+
+/* ten lines */
+.ten{counter-reset:t; display:grid; gap:11px; margin:0; padding:0; list-style:none}
+.ten li{
+  counter-increment:t; display:grid; grid-template-columns:30px 1fr; gap:14px;
+  align-items:start; background:var(--surface); border:1px solid var(--line);
+  border-radius:11px; padding:14px 16px; min-width:0;
+}
+.ten li::before{
+  content:counter(t,decimal-leading-zero);
+  font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.03em;
+  font-variant-numeric:tabular-nums; padding-top:3px;
+}
+.ten q{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px; line-height:1.5;
+  quotes:"“" "”";
+}
+
+/* footer */
+footer{background:var(--surface); border-top:1px solid var(--line); padding-block:30px 36px}
+footer .wrap{display:grid; gap:18px}
+.srcs{font-size:13.5px; color:var(--muted); display:grid; gap:5px}
+.srcs b{color:var(--ink); font-weight:700}
+.sig{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  padding-top:16px; border-top:1px solid var(--line);
+}
+.sig .who{font-size:13.5px; line-height:1.45}
+.sig .who b{display:block; font-weight:700}
+.sig .who span{color:var(--muted)}
+.note{
+  font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+  color:var(--muted); background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; margin-left:auto;
+}
+@media (max-width:520px){.note{margin-left:0}}
+</style>
+
+<style>
+.tblwrap{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:560px; font-size:14.5px}
+th{text-align:left; font-weight:800; font-size:11.5px; letter-spacing:.07em; text-transform:uppercase;
+   color:var(--accent); background:var(--accent-soft); padding:11px 14px; white-space:nowrap}
+td{padding:11px 14px; border-top:1px solid var(--line); vertical-align:top}
+tbody tr:nth-child(even){background:var(--surface-2)}
+.num{font-variant-numeric:tabular-nums; text-align:center; white-space:nowrap}
+.rowlab{font-weight:700; white-space:nowrap}
+.scrollhint{font-size:12.5px; color:var(--muted); margin:8px 0 0}
+.map{display:grid; gap:10px}
+.map .r{display:grid; grid-template-columns:1fr 1fr 1fr; gap:0;
+        border:1px solid var(--line); border-radius:11px; overflow:hidden; background:var(--surface)}
+.map .c{padding:13px 15px; min-width:0; font-size:14px; border-left:1px solid var(--line)}
+.map .c:first-child{border-left:0}
+.map .h{background:var(--surface-2); font-weight:700; font-size:11.5px; letter-spacing:.07em;
+        text-transform:uppercase; color:var(--muted); padding:9px 15px}
+.map .bad{color:var(--stop)}
+.map .good{font-weight:600}
+@media (max-width:640px){
+  .map .r{grid-template-columns:1fr}
+  .map .c{border-left:0; border-top:1px solid var(--line)}
+  .map .c:first-child{border-top:0; background:var(--surface-2); font-weight:700}
+  .map .r.head{display:none}
+}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brandmark" href="#top">
+      <svg width="38" height="38" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <span class="wordmark">
+        <b>Cuongnc</b><span>1504</span>
+        <em>Kho tư liệu đào tạo</em>
+      </span>
+    </a>
+    <nav aria-label="Mục lục">
+      <a href="#lotrinh">Hai lộ trình</a>
+      <a href="#kash">KASH</a>
+      <a href="#pheu">Hai phễu</a>
+      <a href="#bathang">Ba tháng</a>
+      <a href="#jfw">JFW</a>
+      <a href="#camnho">10 câu</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap col">
+    <p class="eyebrow">Ghi chép cá nhân · Học hỏi từ chuyên gia</p>
+    <h1>Biến lớp OB thành một hệ thống vận hành</h1>
+    <p class="lede">Những gì tôi giữ lại được sau khi học Jim về 90 ngày đầu của một Tư vấn viên
+      mới — bắt đầu từ ngày thứ 6, khi lớp học kết thúc và văn phòng mới thực sự bắt đầu.</p>
+    <div class="meta">
+      <span>Chủ đề: Tư vấn viên mới 90 ngày</span>
+      <span>Ghi chép &amp; diễn giải cá nhân</span>
+      <span>Đọc khoảng 7 phút</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap col">
+
+  <section id="mo-dau">
+    <div class="kicker"><i>MỞ ĐẦU</i></div>
+    <h2>Ba câu đóng đinh</h2>
+    <div class="quotes">
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Chúng ta không tổ chức một lớp OB thứ hai. Chúng ta biến lớp OB đầu tiên thành hệ thống
+          vận hành.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>OB đưa bản đồ. Bây giờ chúng ta phải đi.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Bàn giao một người đã đủ chuẩn để làm nghề, không phải một người đã làm giỏi.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="ranhgioi">
+    <div class="kicker"><i>01</i></div>
+    <h2>Ranh giới trách nhiệm</h2>
+    <p class="sub">Lớp OB là việc của công ty. <b>Ngày 6 đến Ngày 90 là việc của văn phòng</b> —
+      cho cả hai lộ trình.</p>
+    <div class="grid g2">
+      <div class="card"><span class="tag">Lớp OB</span><h3>4,5 ngày · 9 buổi</h3>
+        <p>Giống nhau cho mọi Tư vấn viên mới. Kết thúc bằng chứng chỉ, chứng nhận nội bộ,
+          P100 đạt chuẩn và hợp đồng đầu tiên.</p></div>
+      <div class="card"><span class="tag">GAD</span><h3>Đặt chuẩn và kiểm tra</h3>
+        <p>Thiết lập chuẩn 2 hồ sơ (Part-time) và 4 hồ sơ (Full-time). Kiểm tra số giờ, P100 và
+          hồ sơ. Trao đổi chuyển đổi vào Ngày 90.</p></div>
+      <div class="card"><span class="tag">MOA</span><h3>Chịu trách nhiệm Ngày 6–90</h3>
+        <p>Của từng Tư vấn viên mới. Làm mẫu, rồi quan sát. Bảo vệ kế hoạch 12 giờ và 55 giờ.</p></div>
+      <div class="card"><span class="tag">Tư vấn viên mới</span><h3>Làm đủ giờ đã cam kết</h3>
+        <p>Giữ lời hứa. Mỗi lần gặp mang đến 1 điểm mạnh và 1 bước tiếp theo.</p></div>
+    </div>
+  </section>
+
+  <section id="lotrinh">
+    <div class="kicker"><i>02</i></div>
+    <h2>Hai lộ trình sau OB</h2>
+    <p class="sub">Phần lớn Tư vấn viên mới bắt đầu bằng Part-time có cam kết. Full-time là đích
+      đến, không phải điều kiện đầu vào.</p>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag">Part-time có cam kết</span>
+        <h3>Tối thiểu 12 giờ / tuần</h3>
+        <p>Mục tiêu <b>2 hồ sơ chuẩn mỗi tháng</b> — 6 hồ sơ trong 90 ngày. Mục đích là chứng minh
+          hệ thống chạy được, để họ chủ động chọn chuyển sang Full-time.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Full-time</span>
+        <h3>55 giờ / tuần</h3>
+        <p>Mục tiêu <b>4 hồ sơ chuẩn mỗi tháng</b> — 12 hồ sơ trong 90 ngày. Mục đích là phát triển
+          vững vàng như một Tư vấn viên chuyên nghiệp, không chỉ vượt qua Tháng 1.</p>
+      </div>
+    </div>
+    <blockquote class="q" style="margin-top:16px"><span class="mk">”</span>
+      <p>Cùng một lớp OB. Cùng KASH. Cùng công thức phân bổ thời gian. Chỉ khác số giờ và số hồ sơ.</p>
+    </blockquote>
+  </section>
+
+  <section id="botro">
+    <div class="kicker"><i>03</i></div>
+    <h2>Bổ trợ, không lặp lại</h2>
+    <p class="sub">Lớp học trang bị kiến thức. Văn phòng hình thành năng lực hành nghề. Đây là
+      bảng đối chiếu Jim dùng để chặn thói quen mở thêm lớp.</p>
+    <div class="map">
+      <div class="r head">
+        <div class="c h">OB đã đào tạo</div>
+        <div class="c h">Đừng làm thế này</div>
+        <div class="c h">Hãy làm thế này</div>
+      </div>
+      <div class="r">
+        <div class="c">Nền tảng, hợp đồng, luật, đạo đức, thi chứng chỉ</div>
+        <div class="c bad">Thêm một buổi giảng sản phẩm</div>
+        <div class="c good">Áp dụng đạo đức khi khách hàng đề nghị đi đường tắt</div>
+      </div>
+      <div class="r">
+        <div class="c">Sản phẩm cốt lõi, FNA, trình bày, chốt sale, xử lý từ chối</div>
+        <div class="c bad">Thêm một bộ slide FNA</div>
+        <div class="c good">Làm mẫu kỹ năng. Quan sát thực hành. Coaching trên điểm mạnh</div>
+      </div>
+      <div class="r">
+        <div class="c">Cách tìm kiếm khách hàng, khởi tạo P100</div>
+        <div class="c bad">Thêm một lớp lập danh sách tên</div>
+        <div class="c good">Kiểm tra P100 mỗi tuần. Vận hành theo 12 giờ hoặc 55 giờ</div>
+      </div>
+      <div class="r">
+        <div class="c">Hợp đồng đầu tiên là kết quả khóa học</div>
+        <div class="c bad">Hy vọng Hồ sơ 1 tự xuất hiện</div>
+        <div class="c good">Làm đúng ngay từ Hồ sơ 1, rồi mới nói tới 2 hay 4 hồ sơ mỗi tháng</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kash">
+    <div class="kicker"><i>04</i></div>
+    <h2>KASH không đổi, chỉ quy mô đổi</h2>
+    <p class="sub">Bốn thứ một Tư vấn viên mới phải có. Lộ trình 12 giờ hay 55 giờ đều cần đủ
+      cả bốn.</p>
+    <div class="mars">
+      <div class="row"><div class="L">K</div><div>
+        <h3>Kiến thức</h3>
+        <p>OB đã dạy. Bây giờ phải áp dụng: sản phẩm, FNA, tuân thủ, tính phù hợp.</p>
+      </div></div>
+      <div class="row"><div class="L">A</div><div>
+        <h3>Thái độ</h3>
+        <p>Phẩm chất, trung thực, giữ cam kết, bền bỉ, tư duy phát triển.</p>
+      </div></div>
+      <div class="row"><div class="L">S</div><div>
+        <h3>Kỹ năng</h3>
+        <p>Làm mẫu trước rồi quan sát — dù là 12 giờ hay 55 giờ.</p>
+      </div></div>
+      <div class="row"><div class="L">H</div><div>
+        <h3>Thói quen</h3>
+        <p>Cùng tỷ lệ phân bổ tuần. Làm đúng từ Hồ sơ 1. Đạt mục tiêu của lộ trình.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="tuduy">
+    <div class="kicker"><i>05</i></div>
+    <h2>Ngôn ngữ tạo nên khác biệt</h2>
+    <p class="sub">Jim dẫn Carol Dweck: sau khi học xong, chính cách người quản lý nói mới quyết
+      định Tư vấn viên tiến hay dừng.</p>
+    <div class="sg">
+      <div class="pane stop">
+        <h3>Tư duy đóng</h3>
+        <ul>
+          <li>“Part-time thì không thể có kết quả.”</li>
+          <li>“Đã qua OB thì phải biết chốt rồi.”</li>
+          <li>“Có người có tố chất, có người không.”</li>
+          <li>“Đừng làm FNA cho tới khi chuyển Full-time.”</li>
+          <li>“Cứ xem tôi làm và im lặng.”</li>
+        </ul>
+      </div>
+      <div class="pane go">
+        <h3>Tư duy phát triển</h3>
+        <ul>
+          <li>“12 giờ cam kết, làm đúng cách, tạo ra 2 hồ sơ.”</li>
+          <li>“OB đưa bản đồ. Bây giờ chúng ta phải đi.”</li>
+          <li>“Nỗ lực cộng quy trình tạo nên kỹ năng.”</li>
+          <li>“Làm FNA đúng như trên lớp ngay từ Hồ sơ 1.”</li>
+          <li>“Tôi làm mẫu. Bạn thực hiện. Sau đó cùng xem lại.”</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sub" style="margin:18px 0 0">Coaching bằng câu <b>“chưa đạt, nhưng sẽ đạt”</b>.
+      Ghi nhận sự trung thực và mức giữ cam kết, không chỉ ghi nhận hợp đồng đầu tiên.</p>
+  </section>
+
+  <section id="pheu">
+    <div class="kicker"><i>06</i></div>
+    <h2>Hai phễu, cùng một logic</h2>
+    <p class="sub">Ít giờ hơn thì phễu nhỏ hơn — nhưng không phải một nghề khác.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Lộ trình</th><th>P100</th><th>Liên hệ / tháng</th><th>Cuộc hẹn</th>
+          <th>FNA</th><th>Trình bày</th><th>Hồ sơ / tháng</th><th>Trong 90 ngày</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="rowlab">Part-time 12h</td><td>Vận hành theo tuần</td>
+              <td class="num">20</td><td class="num">8</td><td class="num">5</td>
+              <td class="num">3</td><td class="num"><b>2 hồ sơ</b></td><td class="num"><b>6 hồ sơ</b></td></tr>
+          <tr><td class="rowlab">Full-time 55h</td><td>Vận hành mỗi ngày</td>
+              <td class="num">40</td><td class="num">16</td><td class="num">10</td>
+              <td class="num">6</td><td class="num"><b>4 hồ sơ</b></td><td class="num"><b>12 hồ sơ</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scrollhint">Trên điện thoại, vuốt ngang để xem hết bảng.</p>
+    <p class="sub" style="margin-top:18px">Không ghi nhận hồ sơ nếu bỏ qua FNA, tính phù hợp,
+      hồ sơ tuân thủ hoặc cam kết với khách hàng — ở cả hai lộ trình.</p>
+  </section>
+
+  <section id="giohoc">
+    <div class="kicker"><i>07</i></div>
+    <h2>Công thức giờ — đào tạo giảm dần</h2>
+    <p class="sub">Tuần 1 gồm cả lớp OB nên nặng về đào tạo. Sau Tuần 4, nhịp tuần đi vào ổn định.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Lộ trình</th><th>Tuần 1</th><th>Tuần 2</th><th>Tuần 3</th><th>Tuần 4</th><th>Sau Tuần 4</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="rowlab">Tỷ lệ đào tạo / thị trường</td>
+              <td class="num">80 / 20</td><td class="num">60 / 40</td><td class="num">40 / 60</td>
+              <td class="num">20 / 80</td><td class="num">10 / 70 / 20</td></tr>
+          <tr><td class="rowlab">Part-time 12h</td>
+              <td class="num">9,5 / 2,5</td><td class="num">7 / 5</td><td class="num">5 / 7</td>
+              <td class="num">2,5 / 9,5</td><td class="num">1 / 8,5 / 2,5</td></tr>
+          <tr><td class="rowlab">Full-time 55h</td>
+              <td class="num">44 / 11</td><td class="num">33 / 22</td><td class="num">22 / 33</td>
+              <td class="num">11 / 44</td><td class="num">5,5 / 38,5 / 11</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scrollhint">Sau Tuần 4: 10% tìm kiếm và chốt lịch hẹn · 70% gặp khách hàng tiềm năng ·
+      20% đào tạo, họp và hành chính.</p>
+    <p class="sub" style="margin-top:18px"><b>Vì sao Tuần 1 nặng đào tạo ở cả hai lộ trình:</b>
+      phần lớn Tư vấn viên mới chưa có kinh nghiệm. Họ cần dự lớp, dự họp và đi JFW để quan sát
+      thực tế trước khi tăng thời gian ngoài thị trường.</p>
+  </section>
+
+  <section id="hoso1">
+    <div class="kicker"><i>08</i></div>
+    <h2>Làm đúng ngay từ Hồ sơ 01</h2>
+    <p class="sub">Cùng một chuẩn hồ sơ cho Tư vấn viên 12 giờ và Tư vấn viên 55 giờ.</p>
+    <div class="grid g4">
+      <div class="card"><span class="tag">01</span><h3>Hoàn tất FNA</h3>
+        <p>Đúng như đã học. Không FNA thì không có bảng minh họa.</p></div>
+      <div class="card"><span class="tag">02</span><h3>Tư vấn phù hợp</h3>
+        <p>Chỉ tư vấn điều nhu cầu và khả năng tài chính cho phép.</p></div>
+      <div class="card"><span class="tag">03</span><h3>Minh họa trung thực</h3>
+        <p>Bảng minh họa bằng ngôn ngữ rõ ràng. Không giả định ẩn.</p></div>
+      <div class="card"><span class="tag">04</span><h3>Tuân thủ đầy đủ</h3>
+        <p>Chuẩn chứng nhận nội bộ phải có trong hồ sơ thực tế.</p></div>
+      <div class="card"><span class="tag">05</span><h3>Giữ cam kết</h3>
+        <p>Ghi lại. Thực hiện. Gọi lại sau khi phát hành hợp đồng.</p></div>
+      <div class="card"><span class="tag">06</span><h3>Quản lý xác nhận</h3>
+        <p>Các hồ sơ đầu tiên phải được coaching trước khi gửi.</p></div>
+    </div>
+    <blockquote class="q" style="margin-top:16px"><span class="mk">”</span>
+      <p>Hồ sơ đi đường tắt phải trả lại. Không có ngoại lệ.</p>
+    </blockquote>
+  </section>
+
+  <section id="bathang">
+    <div class="kicker"><i>09</i></div>
+    <h2>Ba tháng, ba nhiệm vụ khác nhau</h2>
+    <p class="sub">Cùng một phương pháp, nhưng trọng tâm của mỗi tháng không giống nhau.</p>
+    <ul class="rhythm">
+      <li><b>Tháng 1 · Ngày 1–30 — Nền tảng</b><span>Ngày 1–5 nằm trong OB. Ngày 6–30 biến kiến
+        thức lớp học thành Hồ sơ 1. Tỷ trọng đào tạo giảm từ 80% xuống 20%.</span></li>
+      <li><b>Tháng 2 · Ngày 31–60 — Xây dựng</b><span>Tư vấn viên chủ động nhiều hơn trong cuộc gặp
+        sau khi quản lý làm mẫu kỹ năng của tuần. Bổ sung P100. Chịu trách nhiệm với con số.</span></li>
+      <li><b>Tháng 3 · Ngày 61–90 — Củng cố</b><span>Xin 2 khách hàng giới thiệu sau mỗi lần chốt.
+        Tự rà soát thứ Sáu. Đạt 6 hoặc 12 hồ sơ chuẩn, rồi trao đổi 90 ngày với quản lý.</span></li>
+    </ul>
+    <h3 style="font-size:16px; margin:26px 0 12px">Bốn cột mốc của Tháng 1</h3>
+    <div class="grid g4">
+      <div class="card"><span class="tag">Ngày 5</span><h3>Hoàn tất OB</h3>
+        <p>Khởi tạo P100. Đặt lịch JFW đầu tiên theo cách làm mẫu rồi quan sát.</p></div>
+      <div class="card"><span class="tag">Ngày 14</span><h3>P100 đạt chuẩn</h3>
+        <p>Có FNA và bảng minh họa cá nhân. Có lịch hẹn từ danh sách. Thời gian đào tạo còn 60%.</p></div>
+      <div class="card"><span class="tag">Ngày 21</span><h3>Trình bày lần đầu</h3>
+        <p>Thực hiện phần trình bày đầu tiên sau khi đã được làm mẫu đúng chuẩn.</p></div>
+      <div class="card"><span class="tag">Ngày 30</span><h3>Nộp Hồ sơ 1</h3>
+        <p>Đúng cách đã học. Giờ làm việc đi vào ổn định, đúng tiến độ 2 hoặc 4 hồ sơ.</p></div>
+    </div>
+  </section>
+
+  <section id="jfw">
+    <div class="kicker"><i>10</i></div>
+    <h2>Phương pháp JFW — bốn bước, suốt 90 ngày</h2>
+    <p class="sub">Áp dụng như nhau cho cả hai lộ trình. Đây là chỗ kỹ năng trên lớp biến thành
+      năng lực thật.</p>
+    <ul class="rhythm">
+      <li><b>1 · Làm mẫu</b><span>Quản lý làm mẫu một kỹ năng đã học trong lớp, ngay trong một
+        cuộc gặp thực tế.</span></li>
+      <li><b>2 · Quan sát</b><span>Tư vấn viên thực hiện chính kỹ năng đó. Không làm thay, trừ khi
+        có rủi ro về đạo đức, tính phù hợp hoặc tuân thủ.</span></li>
+      <li><b>3 · Điểm mạnh trước</b><span>Phản hồi bắt đầu bằng điều họ làm tốt, sau đó là một điểm
+        cần cải thiện. Ghi lại cả hai.</span></li>
+      <li><b>4 · Lặp lại</b><span>Giữ cùng phương pháp suốt Tháng 1 đến Tháng 3. Bảo vệ JFW trong
+        tuần 12 giờ — không được bỏ chỉ vì họ là Tư vấn viên Part-time.</span></li>
+    </ul>
+  </section>
+
+  <section id="camket">
+    <div class="kicker"><i>11</i></div>
+    <h2>Cam kết 90 ngày — bảy dòng để ký</h2>
+    <p class="sub">Tích vào ô đã làm được. Đánh dấu chỉ lưu trên máy của anh/chị.</p>
+    <div class="pledge">
+      <ol>
+        <li><label><input type="checkbox" id="tv1"><span>Mọi Tư vấn viên mới hoàn thành <b>cùng một lớp OB</b>.</span></label></li>
+        <li><label><input type="checkbox" id="tv2"><span>Tham gia theo <b>Part-time 12 giờ / 2 hồ sơ</b> hoặc <b>Full-time 55 giờ / 4 hồ sơ</b> mỗi tháng.</span></label></li>
+        <li><label><input type="checkbox" id="tv3"><span>Tuân theo cùng KASH và cùng <b>tỷ lệ phân bổ thời gian</b>, gồm cả lộ trình giảm đào tạo trong 4 tuần.</span></label></li>
+        <li><label><input type="checkbox" id="tv4"><span>Được <b>JFW theo cách làm mẫu rồi quan sát</b>, kể cả trong tuần 12 giờ.</span></label></li>
+        <li><label><input type="checkbox" id="tv5"><span>Nộp <b>Hồ sơ 1 đúng cách đã học</b>. Thiếu FNA hoặc hồ sơ tuân thủ thì không nhận.</span></label></li>
+        <li><label><input type="checkbox" id="tv6"><span>Part-time: <b>6 hồ sơ chuẩn trong 90 ngày</b> và một cuộc trao đổi chuyển đổi.</span></label></li>
+        <li><label><input type="checkbox" id="tv7"><span>Full-time: <b>12 hồ sơ chuẩn trong 90 ngày</b>.</span></label></li>
+      </ol>
+      <p class="foot" id="plcount">Đã đánh dấu 0 / 7</p>
+    </div>
+  </section>
+
+  <section id="camnho">
+    <div class="kicker"><i>12</i></div>
+    <h2>Mười câu nên nhớ</h2>
+    <p class="sub">Nếu chỉ giữ lại một trang, tôi giữ trang này.</p>
+    <ol class="ten">
+      <li><q>Chúng ta không tổ chức một lớp OB thứ hai. Chúng ta biến lớp OB đầu tiên thành hệ thống vận hành.</q></li>
+      <li><q>OB đưa bản đồ. Bây giờ chúng ta phải đi.</q></li>
+      <li><q>Lớp học trang bị kiến thức. Văn phòng hình thành năng lực hành nghề.</q></li>
+      <li><q>Làm Part-time không có nghĩa là phẩm chất Part-time.</q></li>
+      <li><q>Ít giờ hơn thì phễu nhỏ hơn, nhưng không phải một nghề khác.</q></li>
+      <li><q>Nỗ lực cộng quy trình tạo nên kỹ năng.</q></li>
+      <li><q>Tôi làm mẫu. Bạn thực hiện. Sau đó cùng xem lại.</q></li>
+      <li><q>Lời từ chối là dữ liệu. Cuộc trò chuyện tiếp theo vẫn phải chuyên nghiệp.</q></li>
+      <li><q>Hồ sơ đi đường tắt phải trả lại. Không có ngoại lệ.</q></li>
+      <li><q>Bàn giao một người đã đủ chuẩn để làm nghề, không phải một người đã làm giỏi.</q></li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap col">
+    <div class="srcs">
+      <div><b>Về trang này:</b> ghi chép cá nhân sau khi học Jim về 90 ngày đầu của Tư vấn viên mới.
+        Nội dung đã được tôi diễn giải và sắp xếp lại theo cách hiểu của mình, không phải bản sao
+        tài liệu gốc.</div>
+      <div>Khái niệm tư duy phát triển dẫn theo Carol Dweck.</div>
+    </div>
+    <div class="sig">
+      <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <div class="who">
+        <b>Tóm tắt &amp; biên soạn: Nguyễn Chí Cương</b>
+        <span>cuongnc1504@gmail.com · Zalo 0945 789 292</span>
+      </div>
+      <span class="note">Ghi chép cá nhân</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.pledge input'));
+  var out = document.getElementById('plcount');
+  var KEY = 'tvv-90-pledge';
+
+  function read(){
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; }
+    catch (e) { return {}; }
+  }
+  function save(state){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  function paint(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    out.textContent = 'Đã đánh dấu ' + n + ' / ' + boxes.length;
+  }
+
+  var saved = read();
+  boxes.forEach(function(b){
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', function(){
+      var s = read();
+      s[b.id] = b.checked;
+      save(s);
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+
+</body>
+</html>

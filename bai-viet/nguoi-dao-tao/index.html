@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khi nào đào tạo là câu trả lời</title>
+<meta name="description" content="Ghi chép cá nhân về vai trò người đào tạo — bốn cách hỗ trợ, chẩn đoán MARS, ranh giới tham vấn và mô hình MIICEP.">
+<meta name="author" content="Nguyễn Chí Cương">
+<meta name="theme-color" content="#6B2A1E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2044%2044%22%3E%3Crect%20width%3D%2244%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22%236B2A1E%22%2F%3E%3Cpath%20d%3D%22M27%2013.34%20A10%2010%200%201%200%2027%2030.66%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2231.6%22%20cy%3D%2222%22%20r%3D%222.4%22%20fill%3D%22%23B04A20%22%2F%3E%3C%2Fsvg%3E">
+<link rel="canonical" href="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/nguoi-dao-tao/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Cuongnc1504 — Kho tư liệu đào tạo">
+<meta property="og:title" content="Khi nào đào tạo là câu trả lời">
+<meta property="og:description" content="Ghi chép cá nhân về vai trò người đào tạo — bốn cách hỗ trợ, chẩn đoán MARS, ranh giới tham vấn và mô hình MIICEP.">
+<meta property="og:url" content="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/nguoi-dao-tao/">
+<meta property="og:image" content="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/nguoi-dao-tao/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+:root{ color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px) }
+body{ margin:0 }
+img{ max-width:100% }
+[hidden]{ display:none !important }
+</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,500;0,600;1,500&display=swap">
+
+<style>
+/* Layout: cột đọc hẹp 72ch trên nền xanh nhạt; các dải trích dẫn tràn ngang;
+   bảng chuyển thành thẻ dọc dưới 720px. */
+:root{
+  --bg:#F4F7FA;
+  --surface:#FFFFFF;
+  --surface-2:#EAF1F7;
+  --ink:#0C1A26;
+  --muted:#566B7E;
+  --line:#D9E3EC;
+  --brand:#6B2A1E;
+  --accent:#B04A20;
+  --accent-soft:#FAEBE4;
+  --stop:#8E2F3F;
+  --stop-soft:#FAEAEE;
+  --go:#17705A;
+  --go-soft:#E6F3EF;
+  --mark:#6B2A1E;
+  --shadow:0 1px 2px rgba(12,26,38,.05), 0 8px 24px -12px rgba(12,26,38,.18);
+  --f-sans:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-serif:"Lora", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+    --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+    --brand:#F0A183; --accent:#DD7B4E; --accent-soft:#2E1A13;
+    --stop:#EE8FA3; --stop-soft:#2B151B;
+    --go:#6CC9A6; --go-soft:#12261F;
+    --mark:#3A1E16;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+  --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+  --brand:#F0A183; --accent:#DD7B4E; --accent-soft:#2E1A13;
+  --stop:#EE8FA3; --stop-soft:#2B151B;
+  --go:#6CC9A6; --go-soft:#12261F;
+  --mark:#3A1E16;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--f-sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px);
+  background:var(--surface); z-index:30;
+}
+.wrap{
+  max-width:860px; margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+.col{max-width:720px}
+
+/* ---------- header ---------- */
+.bar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--surface); border-bottom:1px solid var(--line);
+}
+.bar .wrap{
+  display:flex; align-items:center; gap:14px;
+  padding-block:11px; flex-wrap:wrap;
+}
+.brandmark{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+.brandmark svg{display:block; flex:none}
+.wordmark{line-height:1.1}
+.wordmark b{font-weight:800; letter-spacing:-.02em; font-size:15px}
+.wordmark span{font-weight:500; color:var(--accent); font-size:15px}
+.wordmark em{
+  display:block; font-style:normal; font-size:10.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:1px;
+}
+.bar nav{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{
+  font-size:12.5px; font-weight:600; color:var(--muted); text-decoration:none;
+  padding:5px 10px; border-radius:999px; white-space:nowrap;
+}
+.bar nav a:hover{color:var(--accent); background:var(--accent-soft)}
+.bar nav a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--surface); border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:40px 34px}
+.eyebrow{
+  font-size:11.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 14px;
+}
+h1{
+  font-family:var(--f-sans); font-weight:800; letter-spacing:-.025em;
+  font-size:clamp(28px,5.4vw,44px); line-height:1.12; margin:0 0 16px;
+  text-wrap:balance; color:var(--ink);
+}
+.lede{font-size:17px; color:var(--muted); margin:0; max-width:62ch}
+.meta{
+  display:flex; flex-wrap:wrap; gap:8px 10px; margin-top:22px;
+  font-size:12.5px; color:var(--muted);
+}
+.meta span{
+  background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; font-weight:500;
+}
+
+/* ---------- sections ---------- */
+section{padding-block:40px}
+section + section{border-top:1px solid var(--line)}
+.kicker{
+  display:flex; align-items:baseline; gap:10px; margin:0 0 6px;
+}
+.kicker i{
+  font-style:normal; font-family:var(--f-sans); font-weight:800; font-size:12px;
+  color:var(--accent); letter-spacing:.08em;
+}
+h2{
+  font-size:clamp(21px,3.4vw,27px); font-weight:800; letter-spacing:-.02em;
+  margin:0 0 10px; line-height:1.22; text-wrap:balance;
+}
+.sub{color:var(--muted); font-size:15px; margin:0 0 24px; max-width:64ch}
+p{margin:0 0 14px}
+
+/* ---------- quote blocks ---------- */
+.quotes{display:grid; gap:14px; margin-top:4px}
+.q{
+  background:var(--brand); color:#fff; border-radius:14px;
+  padding:22px 24px; position:relative; overflow:hidden;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}}
+:root[data-theme="dark"] .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}
+.q p{
+  font-family:var(--f-serif); font-style:italic; font-weight:500;
+  font-size:clamp(17px,2.6vw,20px); line-height:1.45; margin:0;
+}
+.q .mk{
+  position:absolute; right:14px; top:-6px; font-family:var(--f-serif);
+  font-size:72px; line-height:1; opacity:.15; pointer-events:none;
+}
+
+/* ---------- cards ---------- */
+.grid{display:grid; gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:620px){.g2,.g4{grid-template-columns:1fr}}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:18px 18px 16px; min-width:0;
+}
+.card h3{
+  font-size:15.5px; font-weight:700; margin:0 0 7px; letter-spacing:-.01em; line-height:1.3;
+}
+.card p{font-size:14.5px; color:var(--muted); margin:0}
+.tag{
+  display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--accent); margin-bottom:9px;
+}
+
+/* MARS letters */
+.mars{display:grid; gap:12px}
+.mars .row{
+  display:grid; grid-template-columns:52px 1fr; gap:16px; align-items:start;
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px;
+}
+.mars .L{
+  font-weight:800; font-size:26px; line-height:1; color:var(--accent);
+  background:var(--accent-soft); border-radius:10px; display:grid; place-items:center;
+  height:52px; letter-spacing:-.02em;
+}
+.mars h3{font-size:14px; margin:0 0 5px; font-weight:700}
+.mars p{font-size:14.5px; color:var(--muted); margin:0}
+@media (max-width:480px){
+  .mars .row{grid-template-columns:40px 1fr; gap:12px; padding:14px}
+  .mars .L{height:40px; font-size:20px}
+}
+
+/* method list */
+.method{display:grid; gap:12px}
+.method .row{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:16px 18px; display:grid; gap:8px;
+}
+.method .top{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px}
+.method .sig{font-size:14.5px; font-weight:600; flex:1 1 220px; min-width:0}
+.method .use{
+  font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:4px 10px; border-radius:999px;
+  white-space:nowrap;
+}
+.method .why{font-size:14px; color:var(--muted); margin:0; padding-top:2px; border-top:1px dashed var(--line)}
+.method .why::before{content:"Bởi vì "; font-weight:600; color:var(--ink)}
+
+/* rhythm timeline */
+.rhythm{display:grid; gap:0; border-left:2px solid var(--line); margin-left:6px}
+.rhythm li{list-style:none; padding:0 0 20px 22px; position:relative}
+.rhythm li:last-child{padding-bottom:0}
+.rhythm li::before{
+  content:""; position:absolute; left:-7px; top:7px; width:12px; height:12px;
+  border-radius:50%; background:var(--accent); border:3px solid var(--bg);
+}
+.rhythm b{display:block; font-size:15px; letter-spacing:-.01em}
+.rhythm span{color:var(--muted); font-size:14.5px}
+
+/* stop / go */
+.sg{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:640px){.sg{grid-template-columns:1fr}}
+.sg .pane{border-radius:12px; padding:18px; border:1px solid var(--line); min-width:0}
+.sg .stop{background:var(--stop-soft); border-color:color-mix(in srgb, var(--stop) 24%, transparent)}
+.sg .go{background:var(--go-soft); border-color:color-mix(in srgb, var(--go) 24%, transparent)}
+.sg h3{
+  font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  margin:0 0 12px;
+}
+.sg .stop h3{color:var(--stop)}
+.sg .go h3{color:var(--go)}
+.sg ul{margin:0; padding:0; list-style:none; display:grid; gap:11px}
+.sg li{font-size:14.5px; line-height:1.5; padding-left:20px; position:relative}
+.sg li::before{position:absolute; left:0; top:0; font-weight:700}
+.sg .stop li::before{content:"✕"; color:var(--stop)}
+.sg .go li::before{content:"✓"; color:var(--go)}
+
+/* commitment checklist */
+.pledge{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:20px 20px 16px;
+}
+.pledge ol{margin:0; padding:0; list-style:none; display:grid; gap:2px}
+.pledge li{min-width:0}
+.pledge label{
+  display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:start;
+  padding:10px 8px; border-radius:9px; cursor:pointer; font-size:15px; line-height:1.5;
+}
+.pledge label:hover{background:var(--surface-2)}
+.pledge input{
+  width:19px; height:19px; margin:3px 0 0; accent-color:var(--accent); cursor:pointer;
+}
+.pledge input:checked + span{color:var(--muted); text-decoration:line-through; text-decoration-thickness:1px}
+.pledge .foot{
+  margin:12px 0 0; padding-top:12px; border-top:1px solid var(--line);
+  font-size:12.5px; color:var(--muted);
+}
+
+/* models */
+.model{
+  background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:0 12px 12px 0; padding:18px 20px; margin-bottom:14px;
+}
+.model h3{font-size:16px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em}
+.model p{font-size:14.5px; color:var(--muted); margin:0 0 10px}
+.model p:last-child{margin:0}
+.model .pull{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px;
+  color:var(--ink); margin:0; padding-left:14px; border-left:2px solid var(--line);
+}
+.chain{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px}
+.chain b{
+  font-size:12.5px; font-weight:700; background:var(--accent-soft); color:var(--accent);
+  padding:4px 9px; border-radius:7px; letter-spacing:.01em;
+}
+.chain i{font-style:normal; color:var(--muted); align-self:center; font-size:13px}
+
+/* ten lines */
+.ten{counter-reset:t; display:grid; gap:11px; margin:0; padding:0; list-style:none}
+.ten li{
+  counter-increment:t; display:grid; grid-template-columns:30px 1fr; gap:14px;
+  align-items:start; background:var(--surface); border:1px solid var(--line);
+  border-radius:11px; padding:14px 16px; min-width:0;
+}
+.ten li::before{
+  content:counter(t,decimal-leading-zero);
+  font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.03em;
+  font-variant-numeric:tabular-nums; padding-top:3px;
+}
+.ten q{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px; line-height:1.5;
+  quotes:"“" "”";
+}
+
+/* footer */
+footer{background:var(--surface); border-top:1px solid var(--line); padding-block:30px 36px}
+footer .wrap{display:grid; gap:18px}
+.srcs{font-size:13.5px; color:var(--muted); display:grid; gap:5px}
+.srcs b{color:var(--ink); font-weight:700}
+.sig{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  padding-top:16px; border-top:1px solid var(--line);
+}
+.sig .who{font-size:13.5px; line-height:1.45}
+.sig .who b{display:block; font-weight:700}
+.sig .who span{color:var(--muted)}
+.note{
+  font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+  color:var(--muted); background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; margin-left:auto;
+}
+@media (max-width:520px){.note{margin-left:0}}
+</style>
+
+<style>
+.map{display:grid; gap:10px}
+.map .r{display:grid; grid-template-columns:1.1fr .8fr 1.1fr; gap:0;
+        border:1px solid var(--line); border-radius:11px; overflow:hidden; background:var(--surface)}
+.map .c{padding:13px 15px; min-width:0; font-size:14px; border-left:1px solid var(--line)}
+.map .c:first-child{border-left:0}
+.map .h{background:var(--surface-2); font-weight:700; font-size:11.5px; letter-spacing:.07em;
+        text-transform:uppercase; color:var(--muted); padding:9px 15px}
+.map .pick{font-weight:800; color:var(--accent); font-size:12.5px; letter-spacing:.07em;
+           text-transform:uppercase}
+@media (max-width:640px){
+  .map .r{grid-template-columns:1fr}
+  .map .c{border-left:0; border-top:1px solid var(--line)}
+  .map .c:first-child{border-top:0; background:var(--surface-2); font-weight:700}
+  .map .r.head{display:none}
+}
+.tools{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+@media (max-width:620px){.tools{grid-template-columns:1fr}}
+.tool{background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:15px 16px; min-width:0}
+.tool b{display:block; font-size:14.5px; margin-bottom:4px}
+.tool span{font-size:14px; color:var(--muted)}
+.steps{counter-reset:s; display:grid; gap:11px; margin:0; padding:0; list-style:none}
+.steps li{counter-increment:s; display:grid; grid-template-columns:34px 1fr; gap:14px;
+          background:var(--surface); border:1px solid var(--line); border-radius:11px;
+          padding:15px 17px; min-width:0}
+.steps li::before{content:counter(s); font-size:15px; font-weight:800; color:var(--accent);
+                  background:var(--accent-soft); border-radius:8px; height:30px;
+                  display:grid; place-items:center}
+.steps b{display:block; font-size:15px; margin-bottom:3px}
+.steps span{font-size:14.5px; color:var(--muted)}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brandmark" href="#top">
+      <svg width="38" height="38" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <span class="wordmark">
+        <b>Cuongnc</b><span>1504</span>
+        <em>Kho tư liệu đào tạo</em>
+      </span>
+    </a>
+    <nav aria-label="Mục lục">
+      <a href="#boncach">Bốn cách</a>
+      <a href="#chandoan">Chẩn đoán</a>
+      <a href="#ranhgioi">Ranh giới</a>
+      <a href="#miicep">MIICEP</a>
+      <a href="#congcu">Công cụ</a>
+      <a href="#camnho">10 câu</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap col">
+    <p class="eyebrow">Ghi chép cá nhân · Học hỏi từ chuyên gia</p>
+    <h1>Khi nào đào tạo là câu trả lời</h1>
+    <p class="lede">Những gì tôi giữ lại được sau khi học Jim về vai trò người đào tạo: cách chẩn
+      đoán trước khi dạy, bốn cách hỗ trợ một con người, và cách điều phối một buổi học để người
+      ta dùng được ngoài thực địa.</p>
+    <div class="meta">
+      <span>Chủ đề: Phát triển người đào tạo</span>
+      <span>Ghi chép &amp; diễn giải cá nhân</span>
+      <span>Đọc khoảng 7 phút</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap col">
+
+  <section id="mo-dau">
+    <div class="kicker"><i>MỞ ĐẦU</i></div>
+    <h2>Ba câu đóng đinh</h2>
+    <div class="quotes">
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Đào tạo là then chốt. Nhưng đào tạo sai là lòng tốt đắt đỏ.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Đào tạo là chìa khóa của văn phòng, nhưng không phải công cụ cho mọi vấn đề.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Chẩn đoán trước. Rồi mới hỗ trợ. Rồi mới điều phối.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="suthat">
+    <div class="kicker"><i>01</i></div>
+    <h2>Bốn lần chúng ta dùng sai thuốc</h2>
+    <p class="sub">Jim mở đầu bằng bốn tình huống quen thuộc — đều là hành động tử tế, nhưng
+      không chữa đúng bệnh.</p>
+    <div class="grid g4">
+      <div class="card"><span class="tag">Sai 1</span><h3>Gửi đi học</h3>
+        <p>Khi vấn đề nằm ở phẩm chất, số giờ làm việc hoặc khủng hoảng gia đình.</p></div>
+      <div class="card"><span class="tag">Sai 2</span><h3>Cho học lại lớp cũ</h3>
+        <p>Khi họ đã học xong và đã qua đánh giá. Học lại không tạo thêm năng lực.</p></div>
+      <div class="card"><span class="tag">Sai 3</span><h3>Thuê giảng viên “tạo động lực”</h3>
+        <p>Khi thứ họ cần là một người khai vấn hoặc một người dẫn dắt đi cùng.</p></div>
+      <div class="card"><span class="tag">Sai 4</span><h3>Đóng vai chuyên gia tham vấn</h3>
+        <p>Khi vấn đề là trầm cảm hoặc đổ vỡ gia đình. Đây là ranh giới không được vượt.</p></div>
+    </div>
+  </section>
+
+  <section id="boncach">
+    <div class="kicker"><i>02</i></div>
+    <h2>Bốn cách hỗ trợ một con người</h2>
+    <p class="sub">Hiểu con người trước, rồi mới chọn phương pháp.</p>
+    <div class="mars">
+      <div class="row"><div class="L">1</div><div>
+        <h3>Đào tạo — Trainer</h3>
+        <p>Chỉ dùng khi người đó thiếu KASH: thiếu kiến thức, thái độ, kỹ năng hoặc thói quen.</p>
+      </div></div>
+      <div class="row"><div class="L">2</div><div>
+        <h3>Dẫn dắt — Mentor</h3>
+        <p>Dùng khi họ cần được cầm tay chỉ việc bên cạnh một người đang thành công, để học theo
+          cách làm.</p>
+      </div></div>
+      <div class="row"><div class="L">3</div><div>
+        <h3>Khai vấn — Coach</h3>
+        <p>Dùng khi họ đã được đào tạo rồi, nhưng kết quả vẫn chưa đạt.</p>
+      </div></div>
+      <div class="row"><div class="L">4</div><div>
+        <h3>Tham vấn — Counsellor</h3>
+        <p>Khủng hoảng cá nhân hoặc gia đình. Người quản lý không có chứng chỉ chuyên môn.
+          Đừng đóng vai nhà trị liệu.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="chandoan">
+    <div class="kicker"><i>03</i></div>
+    <h2>Bước một — gặp riêng 15 đến 30 phút</h2>
+    <p class="sub">Chẩn đoán tình huống và bối cảnh <b>trước khi</b> chọn phương pháp.</p>
+    <ol class="steps">
+      <li><div><b>Lắng nghe trước</b><span>Chuyện gì đang xảy ra ở công việc và ở nhà? Đừng mở đầu
+        bằng một lịch đào tạo.</span></div></li>
+      <li><div><b>Xác định khoảng trống</b><span>Soi MARS trước — Động lực, Năng lực, Vai trò,
+        Bối cảnh. Chỉ khi Năng lực là chỗ rò rỉ mới soi tiếp KASH.</span></div></li>
+      <li><div><b>Thống nhất phương pháp</b><span>Đào tạo, dẫn dắt, khai vấn, hoặc chuyển tới
+        chuyên gia — kèm theo việc bảo đảm hoạt động kinh doanh không đứt.</span></div></li>
+      <li><div><b>Viết ra bước tiếp theo</b><span>Ai, làm gì, hạn khi nào. Một trang giấy.
+        Theo đến cùng.</span></div></li>
+    </ol>
+
+    <h3 style="font-size:16px; margin:28px 0 12px">Lăng kính MARS</h3>
+    <div class="mars">
+      <div class="row"><div class="L">M</div><div>
+        <h3>Động lực</h3>
+        <p>Họ có muốn làm công việc này không — và có kiên trì trong tháng này không?</p>
+      </div></div>
+      <div class="row"><div class="L">A</div><div>
+        <h3>Năng lực</h3>
+        <p>Họ có làm được không nếu mọi thứ khác đều thuận lợi? KASH nằm ở đây.</p>
+      </div></div>
+      <div class="row"><div class="L">R</div><div>
+        <h3>Vai trò</h3>
+        <p>Họ có biết điều gì là quan trọng, theo thứ tự nào, tại chính văn phòng này — không phải
+          trên lý thuyết?</p>
+      </div></div>
+      <div class="row"><div class="L">S</div><div>
+        <h3>Bối cảnh</h3>
+        <p>Với nguồn khách, thời gian, hệ thống và chỉ tiêu hiện có, họ có thể thành công không?</p>
+      </div></div>
+    </div>
+
+    <h3 style="font-size:16px; margin:28px 0 12px">Ghép đúng yếu tố với cách hỗ trợ</h3>
+    <div class="map">
+      <div class="r head">
+        <div class="c h">Nếu MARS cho thấy…</div>
+        <div class="c h">Hãy dùng</div>
+        <div class="c h">Bởi vì</div>
+      </div>
+      <div class="r">
+        <div class="c">Thiếu Năng lực / KASH</div>
+        <div class="c"><span class="pick">Đào tạo</span></div>
+        <div class="c">Họ không thể làm điều chưa từng được dạy.</div>
+      </div>
+      <div class="r">
+        <div class="c">Chưa rõ vai trò tại văn phòng</div>
+        <div class="c"><span class="pick">Dẫn dắt</span></div>
+        <div class="c">Họ cần học theo cách công việc được làm tại đây.</div>
+      </div>
+      <div class="r">
+        <div class="c">Động lực yếu — họ biết cách làm</div>
+        <div class="c"><span class="pick">Khai vấn</span></div>
+        <div class="c">Vấn đề nằm ở năng lượng, tinh thần làm chủ hoặc việc áp dụng.</div>
+      </div>
+      <div class="r">
+        <div class="c">Bối cảnh bị tắc hoặc khủng hoảng cá nhân</div>
+        <div class="c"><span class="pick">Sửa công việc / chuyển tiếp</span></div>
+        <div class="c">Một lớp học không sửa được nguồn khách kém hay đổ vỡ gia đình.</div>
+      </div>
+    </div>
+    <blockquote class="q" style="margin-top:18px"><span class="mk">”</span>
+      <p>Hỏi theo đúng thứ tự: Năng lực → Vai trò → Động lực → Bối cảnh. Đừng bỏ bước. Câu “không”
+        đầu tiên chỉ ra phương pháp cần dùng.</p>
+    </blockquote>
+  </section>
+
+  <section id="ranhgioi">
+    <div class="kicker"><i>04</i></div>
+    <h2>Ranh giới tham vấn — không được vượt qua</h2>
+    <p class="sub">Người quản lý không có chứng chỉ để tham vấn về trầm cảm hay đổ vỡ gia đình.
+      Nhưng vẫn còn rất nhiều việc có thể làm.</p>
+    <div class="sg">
+      <div class="pane stop">
+        <h3>Không được</h3>
+        <ul>
+          <li>Chẩn đoán sức khỏe tâm thần</li>
+          <li>Tổ chức một “buổi tham vấn tâm lý”</li>
+          <li>Hứa sẽ hàn gắn gia đình họ</li>
+          <li>Giữ họ trong áp lực doanh số khi họ đang không khỏe</li>
+          <li>Trở thành người duy nhất họ có thể chia sẻ</li>
+        </ul>
+      </div>
+      <div class="pane go">
+        <h3>Vẫn có thể làm</h3>
+        <ul>
+          <li>Hỗ trợ các yêu cầu và dịch vụ của khách hàng</li>
+          <li>Bảo vệ tỷ lệ duy trì hợp đồng và xử lý khiếu nại</li>
+          <li>Giữ phễu khách hàng để khách không bị bỏ rơi</li>
+          <li>Hướng họ tới nguồn hỗ trợ chuyên môn phù hợp</li>
+          <li>Thống nhất kế hoạch quay lại hoạt động khi họ sẵn sàng</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="kash">
+    <div class="kicker"><i>05</i></div>
+    <h2>Khi nào đào tạo mới là công cụ đúng</h2>
+    <p class="sub">Chỉ khi người đó thiếu KASH. Và khi ấy thì hãy dạy — đừng lặp lại lớp cũ
+      thành một khóa học mới.</p>
+    <div class="mars">
+      <div class="row"><div class="L">K</div><div>
+        <h3>Thiếu Kiến thức</h3>
+        <p>Sản phẩm, phân tích nhu cầu, tuân thủ, phép tính hoạt động — chưa nằm trong đầu.</p>
+      </div></div>
+      <div class="row"><div class="L">A</div><div>
+        <h3>Thiếu Thái độ</h3>
+        <p>Phẩm chất, trung thực, giữ lời hứa, tư duy phát triển — chưa được lựa chọn.</p>
+      </div></div>
+      <div class="row"><div class="L">S</div><div>
+        <h3>Thiếu Kỹ năng</h3>
+        <p>Không tự thực hiện được buổi gặp dù đã xem người khác làm.</p>
+      </div></div>
+      <div class="row"><div class="L">H</div><div>
+        <h3>Thiếu Thói quen</h3>
+        <p>Biết phải làm gì. Nhưng không làm đều mỗi tuần.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="dieuphoi">
+    <div class="kicker"><i>06</i></div>
+    <h2>Người điều phối, không phải người thuyết giảng</h2>
+    <p class="sub">Người học trưởng thành tham gia khi được thực hành, không phải khi chỉ ngồi nghe.</p>
+    <div class="sg">
+      <div class="pane stop">
+        <h3>Giảng viên chỉ nói</h3>
+        <ul>
+          <li>Sở hữu nội dung</li>
+          <li>Đứng và giảng</li>
+          <li>Học viên ngồi nghe</li>
+          <li>Thành công = chạy hết slide</li>
+          <li>Người học mất kết nối</li>
+        </ul>
+      </div>
+      <div class="pane go">
+        <h3>Người điều phối dẫn đường</h3>
+        <ul>
+          <li>Sở hữu tiến trình</li>
+          <li>Làm mẫu, rồi để họ thử</li>
+          <li>Học viên nói và làm</li>
+          <li>Thành công = kỹ năng được dùng ngoài thực địa</li>
+          <li>Người học duy trì tham gia</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="miicep">
+    <div class="kicker"><i>07</i></div>
+    <h2>MIICEP — sáu bước cho mọi chủ đề</h2>
+    <p class="sub">Dùng đúng trình tự này dù dạy nội dung gì. Thiếu một bước, người học chỉ có
+      ghi chép, chưa có kỹ năng.</p>
+    <ol class="steps">
+      <li><div><b>M · Tạo động lực</b><span>Vì sao phải học. Hậu quả nếu làm sai. Lợi ích nếu làm
+        đúng. Đừng mở đầu bằng việc đọc chương trình.</span></div></li>
+      <li><div><b>I · Truyền đạt</b><span>Giảng, ghi chú và tài liệu phát tay — chỉ nội dung cốt lõi.
+        Và đừng dừng lại ở đây.</span></div></li>
+      <li><div><b>I · Minh họa</b><span>Làm mẫu, đóng vai, video. Cho họ xem trước khi bắt họ thực
+        hành.</span></div></li>
+      <li><div><b>C · Làm rõ</b><span>Kiểm tra mức độ hiểu trước khi đi tiếp.</span></div></li>
+      <li><div><b>E · Mở rộng</b><span>Họ nói ra suy nghĩ, cảm nhận và cách sẽ áp dụng.</span></div></li>
+      <li><div><b>P · Ghi nhận</b><span>Gọi tên <b>nỗ lực</b>, không chỉ kết quả. Người học gắn kết
+        khi sự cố gắng được ghi nhận.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="congcu">
+    <div class="kicker"><i>08</i></div>
+    <h2>Tám công cụ giữ người lớn ở lại trong phòng</h2>
+    <p class="sub">Người điều phối chọn phương pháp theo kỹ năng cần dạy — không lặp lại một bài
+      giảng mỗi sáng thứ Hai.</p>
+    <div class="tools">
+      <div class="tool"><b>Kể chuyện</b><span>Một hồ sơ có thật. Đã hứa điều gì. Rồi chuyện gì xảy ra.</span></div>
+      <div class="tool"><b>Video hoặc âm thanh</b><span>Một đoạn clip ngắn về buổi gặp. Dừng lại: “Nếu là bạn, bạn sẽ làm gì?”</span></div>
+      <div class="tool"><b>Ẩn dụ, so sánh</b><span>Làm cho điều vô hình trở nên nhìn thấy được — cái phễu, cam kết, tỷ lệ duy trì.</span></div>
+      <div class="tool"><b>Làm mẫu</b><span>Người quản lý làm mẫu kỹ năng ngay tại chỗ. Rồi để học viên thử.</span></div>
+      <div class="tool"><b>Đóng vai</b><span>Luyện phân tích nhu cầu, xử lý từ chối, chốt hợp đồng. Bắt đầu từ điểm mạnh.</span></div>
+      <div class="tool"><b>Thảo luận nhóm</b><span>Họ dạy lẫn nhau. Mình làm rõ, rồi để họ mở rộng.</span></div>
+      <div class="tool"><b>Trình bày</b><span>Một cặp trình bày một bài học. Cả phòng cùng khai vấn.</span></div>
+      <div class="tool"><b>Vòng lặp thực địa</b><span>Áp dụng chính kỹ năng đó trong JFW của tuần. Lớp học không gắn với thực địa chỉ là trình diễn.</span></div>
+    </div>
+  </section>
+
+  <section id="ankhop">
+    <div class="kicker"><i>09</i></div>
+    <h2>Ăn khớp với hệ thống văn phòng</h2>
+    <p class="sub">Kế hoạch 90 ngày vẫn nguyên giá trị. Phần này chỉ xác định cách hỗ trợ
+      <b>từng người</b> bên trong kế hoạch đó.</p>
+    <div class="map">
+      <div class="r head">
+        <div class="c h">Người trước mặt bạn</div>
+        <div class="c h">Hãy dùng</div>
+        <div class="c h">Cụ thể là</div>
+      </div>
+      <div class="r">
+        <div class="c">Tư vấn viên mới, chưa có KASH</div>
+        <div class="c"><span class="pick">Đào tạo + điều phối</span></div>
+        <div class="c">Sau lớp là luyện tập ngoài thực địa. Đừng dạy lại 4,5 ngày.</div>
+      </div>
+      <div class="r">
+        <div class="c">Tư vấn viên mới học theo rất nhanh</div>
+        <div class="c"><span class="pick">Dẫn dắt</span></div>
+        <div class="c">JFW làm mẫu rồi quan sát cùng người quản lý.</div>
+      </div>
+      <div class="r">
+        <div class="c">Đã được đào tạo, con số vẫn thiếu</div>
+        <div class="c"><span class="pick">Khai vấn</span></div>
+        <div class="c">Bảng theo dõi thứ Sáu. Một bước tiếp theo. Không mở thêm lớp.</div>
+      </div>
+      <div class="r">
+        <div class="c">Khủng hoảng cá nhân</div>
+        <div class="c"><span class="pick">Hỗ trợ chuyên môn</span></div>
+        <div class="c">Mình lo phần dịch vụ và khách hàng của họ.</div>
+      </div>
+      <div class="r">
+        <div class="c">Quy mô lớn, nhiều người mới cùng lúc</div>
+        <div class="c"><span class="pick">Người điều phối nội bộ</span></div>
+        <div class="c">Để vận hành lịch — không thay thế người quản lý trực tiếp.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="giangvien">
+    <div class="kicker"><i>10</i></div>
+    <h2>Nếu thuê một giảng viên nội bộ</h2>
+    <p class="sub">Họ điều phối hệ thống. Họ không sở hữu con người.</p>
+    <div class="grid g2">
+      <div class="card"><span class="tag">Chịu trách nhiệm</span><h3>Lịch luyện tập hằng tuần</h3>
+        <p>Triển khai MIICEP trong lớp. Quản trị bảng điểm. Giữ lịch từ lớp nhập môn đến Ngày 90.</p></div>
+      <div class="card"><span class="tag">Phối hợp</span><h3>Kỹ năng của tuần</h3>
+        <p>Rút kinh nghiệm một số buổi JFW. Xác định ai cần đào tạo, ai cần dẫn dắt, ai cần khai vấn.</p></div>
+      <div class="card"><span class="tag">Không bao giờ</span><h3>Làm thay người quản lý</h3>
+        <p>Không thay JFW, không ký duyệt hồ sơ, không tham vấn tâm lý, không đặt chuẩn sản lượng.</p></div>
+      <div class="card"><span class="tag">Báo cáo</span><h3>Danh sách đúng / chậm tiến độ</h3>
+        <p>Mỗi người mới đang theo phương pháp nào. Mẫu hồ sơ kiểm tra hằng tháng.</p></div>
+    </div>
+  </section>
+
+  <section id="camket">
+    <div class="kicker"><i>11</i></div>
+    <h2>Cam kết trước khi gửi ai đi “học thêm”</h2>
+    <p class="sub">Tích vào ô đã làm được. Đánh dấu chỉ lưu trên máy của anh/chị.</p>
+    <div class="pledge">
+      <ol>
+        <li><label><input type="checkbox" id="tr1"><span>Gặp riêng <b>15–30 phút</b> để đọc đúng tình huống.</span></label></li>
+        <li><label><input type="checkbox" id="tr2"><span>Dùng <b>MARS</b> — Năng lực, Vai trò, Động lực, Bối cảnh — rồi mới chọn phương pháp.</span></label></li>
+        <li><label><input type="checkbox" id="tr3"><span>Chọn <b>đào tạo, dẫn dắt, khai vấn</b> — hoặc hỗ trợ chuyên môn kèm việc giữ mảng kinh doanh.</span></label></li>
+        <li><label><input type="checkbox" id="tr4"><span>Không tham vấn về trầm cảm hay đổ vỡ gia đình như thể mình có chứng chỉ chuyên môn.</span></label></li>
+        <li><label><input type="checkbox" id="tr5"><span>Chỉ đào tạo khi <b>thiếu Năng lực / KASH</b> — và khi đó thì điều phối, không thuyết giảng.</span></label></li>
+        <li><label><input type="checkbox" id="tr6"><span>Dùng <b>MIICEP</b> cho mọi chủ đề, kết hợp nhiều phương pháp: kể chuyện, làm mẫu, đóng vai, JFW.</span></label></li>
+        <li><label><input type="checkbox" id="tr7"><span>Nếu thuê giảng viên nội bộ, họ vận hành lịch — <b>tôi vẫn sở hữu chuẩn mực</b>.</span></label></li>
+      </ol>
+      <p class="foot" id="plcount">Đã đánh dấu 0 / 7</p>
+    </div>
+  </section>
+
+  <section id="camnho">
+    <div class="kicker"><i>12</i></div>
+    <h2>Mười câu nên nhớ</h2>
+    <p class="sub">Nếu chỉ giữ lại một trang, tôi giữ trang này.</p>
+    <ol class="ten">
+      <li><q>Đào tạo là then chốt. Nhưng đào tạo sai là lòng tốt đắt đỏ.</q></li>
+      <li><q>Đào tạo là chìa khóa của văn phòng, nhưng không phải công cụ cho mọi vấn đề.</q></li>
+      <li><q>Hiểu con người trước, rồi mới chọn phương pháp.</q></li>
+      <li><q>Họ không thể làm điều chưa từng được dạy.</q></li>
+      <li><q>Họ đã học xong. Kết quả vẫn yếu. Đó là khai vấn, không phải thêm một khóa học.</q></li>
+      <li><q>Một lớp học không sửa được nguồn khách kém hay đổ vỡ gia đình.</q></li>
+      <li><q>Người điều phối sở hữu tiến trình, không sở hữu nội dung.</q></li>
+      <li><q>Thiếu một bước trong MIICEP, người học chỉ có ghi chép, chưa có kỹ năng.</q></li>
+      <li><q>Lớp học không gắn với thực địa chỉ là trình diễn.</q></li>
+      <li><q>Chẩn đoán trước. Rồi mới hỗ trợ. Rồi mới điều phối.</q></li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap col">
+    <div class="srcs">
+      <div><b>Về trang này:</b> ghi chép cá nhân sau khi học Jim về vai trò người đào tạo.
+        Nội dung đã được tôi diễn giải và sắp xếp lại theo cách hiểu của mình, không phải bản sao
+        tài liệu gốc.</div>
+      <div>Mô hình MARS phỏng theo McShane &amp; Von Glinow.</div>
+    </div>
+    <div class="sig">
+      <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <div class="who">
+        <b>Tóm tắt &amp; biên soạn: Nguyễn Chí Cương</b>
+        <span>cuongnc1504@gmail.com · Zalo 0945 789 292</span>
+      </div>
+      <span class="note">Ghi chép cá nhân</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.pledge input'));
+  var out = document.getElementById('plcount');
+  var KEY = 'trainer-pledge';
+
+  function read(){
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; }
+    catch (e) { return {}; }
+  }
+  function save(state){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  function paint(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    out.textContent = 'Đã đánh dấu ' + n + ' / ' + boxes.length;
+  }
+
+  var saved = read();
+  boxes.forEach(function(b){
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', function(){
+      var s = read();
+      s[b.id] = b.checked;
+      save(s);
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+
+</body>
+</html>
