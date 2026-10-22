@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phát triển MOA theo Jim</title>
+<meta name="description" content="Ghi chép cá nhân về phát triển MOA học từ Jim — bốn cái bẫy, chẩn đoán MARS, nhịp tuần 20 phút và mười câu nên nhớ.">
+<meta name="author" content="Nguyễn Chí Cương">
+<meta name="theme-color" content="#0A3A5C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2044%2044%22%3E%3Crect%20width%3D%2244%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22%230A3A5C%22%2F%3E%3Cpath%20d%3D%22M27%2013.34%20A10%2010%200%201%200%2027%2030.66%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2231.6%22%20cy%3D%2222%22%20r%3D%222.4%22%20fill%3D%22%231577C8%22%2F%3E%3C%2Fsvg%3E">
+
+<!-- Xem trước khi dán link vào Zalo / Facebook / Messenger -->
+<meta property="og:type" content="article">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Cuongnc1504 — Kho tư liệu đào tạo">
+<meta property="og:title" content="Phát triển MOA theo Jim">
+<meta property="og:description" content="Ghi chép cá nhân về phát triển MOA học từ Jim — bốn cái bẫy, chẩn đoán MARS, nhịp tuần 20 phút và mười câu nên nhớ.">
+<!-- TODO: đổi thành địa chỉ thật sau khi upload -->
+<meta property="og:url" content="https://cuongnc1504.com/phat-trien-moa/">
+<meta property="og:image" content="https://cuongnc1504.com/phat-trien-moa/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+/* reset tối thiểu — phần artifact tự thêm, nay viết tay để chạy độc lập */
+:root{ color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px) }
+body{ margin:0 }
+img{ max-width:100% }
+[hidden]{ display:none !important }
+</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,500;0,600;1,500&display=swap">
+
+<style>
+/* Layout: cột đọc hẹp 72ch trên nền xanh nhạt; các dải trích dẫn tràn ngang;
+   bảng chuyển thành thẻ dọc dưới 720px. */
+:root{
+  --bg:#F4F7FA;
+  --surface:#FFFFFF;
+  --surface-2:#EAF1F7;
+  --ink:#0C1A26;
+  --muted:#566B7E;
+  --line:#D9E3EC;
+  --brand:#0A3A5C;
+  --accent:#1577C8;
+  --accent-soft:#E4F0FA;
+  --stop:#A8452F;
+  --stop-soft:#FBEDEA;
+  --go:#17705A;
+  --go-soft:#E6F3EF;
+  --mark:#0A3A5C;
+  --shadow:0 1px 2px rgba(12,26,38,.05), 0 8px 24px -12px rgba(12,26,38,.18);
+  --f-sans:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-serif:"Lora", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+    --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+    --brand:#7CC0EF; --accent:#4FA6EE; --accent-soft:#132737;
+    --stop:#E59685; --stop-soft:#2A1A17;
+    --go:#6CC9A6; --go-soft:#12261F;
+    --mark:#0F2A40;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+  --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+  --brand:#7CC0EF; --accent:#4FA6EE; --accent-soft:#132737;
+  --stop:#E59685; --stop-soft:#2A1A17;
+  --go:#6CC9A6; --go-soft:#12261F;
+  --mark:#0F2A40;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--f-sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px);
+  background:var(--surface); z-index:30;
+}
+.wrap{
+  max-width:860px; margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+.col{max-width:720px}
+
+/* ---------- header ---------- */
+.bar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--surface); border-bottom:1px solid var(--line);
+}
+.bar .wrap{
+  display:flex; align-items:center; gap:14px;
+  padding-block:11px; flex-wrap:wrap;
+}
+.brandmark{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+.brandmark svg{display:block; flex:none}
+.wordmark{line-height:1.1}
+.wordmark b{font-weight:800; letter-spacing:-.02em; font-size:15px}
+.wordmark span{font-weight:500; color:var(--accent); font-size:15px}
+.wordmark em{
+  display:block; font-style:normal; font-size:10.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:1px;
+}
+.bar nav{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{
+  font-size:12.5px; font-weight:600; color:var(--muted); text-decoration:none;
+  padding:5px 10px; border-radius:999px; white-space:nowrap;
+}
+.bar nav a:hover{color:var(--accent); background:var(--accent-soft)}
+.bar nav a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--surface); border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:40px 34px}
+.eyebrow{
+  font-size:11.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 14px;
+}
+h1{
+  font-family:var(--f-sans); font-weight:800; letter-spacing:-.025em;
+  font-size:clamp(28px,5.4vw,44px); line-height:1.12; margin:0 0 16px;
+  text-wrap:balance; color:var(--ink);
+}
+.lede{font-size:17px; color:var(--muted); margin:0; max-width:62ch}
+.meta{
+  display:flex; flex-wrap:wrap; gap:8px 10px; margin-top:22px;
+  font-size:12.5px; color:var(--muted);
+}
+.meta span{
+  background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; font-weight:500;
+}
+
+/* ---------- sections ---------- */
+section{padding-block:40px}
+section + section{border-top:1px solid var(--line)}
+.kicker{
+  display:flex; align-items:baseline; gap:10px; margin:0 0 6px;
+}
+.kicker i{
+  font-style:normal; font-family:var(--f-sans); font-weight:800; font-size:12px;
+  color:var(--accent); letter-spacing:.08em;
+}
+h2{
+  font-size:clamp(21px,3.4vw,27px); font-weight:800; letter-spacing:-.02em;
+  margin:0 0 10px; line-height:1.22; text-wrap:balance;
+}
+.sub{color:var(--muted); font-size:15px; margin:0 0 24px; max-width:64ch}
+p{margin:0 0 14px}
+
+/* ---------- quote blocks ---------- */
+.quotes{display:grid; gap:14px; margin-top:4px}
+.q{
+  background:var(--brand); color:#fff; border-radius:14px;
+  padding:22px 24px; position:relative; overflow:hidden;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}}
+:root[data-theme="dark"] .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}
+.q p{
+  font-family:var(--f-serif); font-style:italic; font-weight:500;
+  font-size:clamp(17px,2.6vw,20px); line-height:1.45; margin:0;
+}
+.q .mk{
+  position:absolute; right:14px; top:-6px; font-family:var(--f-serif);
+  font-size:72px; line-height:1; opacity:.15; pointer-events:none;
+}
+
+/* ---------- cards ---------- */
+.grid{display:grid; gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:620px){.g2,.g4{grid-template-columns:1fr}}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:18px 18px 16px; min-width:0;
+}
+.card h3{
+  font-size:15.5px; font-weight:700; margin:0 0 7px; letter-spacing:-.01em; line-height:1.3;
+}
+.card p{font-size:14.5px; color:var(--muted); margin:0}
+.tag{
+  display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--accent); margin-bottom:9px;
+}
+
+/* MARS letters */
+.mars{display:grid; gap:12px}
+.mars .row{
+  display:grid; grid-template-columns:52px 1fr; gap:16px; align-items:start;
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px;
+}
+.mars .L{
+  font-weight:800; font-size:26px; line-height:1; color:var(--accent);
+  background:var(--accent-soft); border-radius:10px; display:grid; place-items:center;
+  height:52px; letter-spacing:-.02em;
+}
+.mars h3{font-size:14px; margin:0 0 5px; font-weight:700}
+.mars p{font-size:14.5px; color:var(--muted); margin:0}
+@media (max-width:480px){
+  .mars .row{grid-template-columns:40px 1fr; gap:12px; padding:14px}
+  .mars .L{height:40px; font-size:20px}
+}
+
+/* method list */
+.method{display:grid; gap:12px}
+.method .row{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:16px 18px; display:grid; gap:8px;
+}
+.method .top{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px}
+.method .sig{font-size:14.5px; font-weight:600; flex:1 1 220px; min-width:0}
+.method .use{
+  font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:4px 10px; border-radius:999px;
+  white-space:nowrap;
+}
+.method .why{font-size:14px; color:var(--muted); margin:0; padding-top:2px; border-top:1px dashed var(--line)}
+.method .why::before{content:"Bởi vì "; font-weight:600; color:var(--ink)}
+
+/* rhythm timeline */
+.rhythm{display:grid; gap:0; border-left:2px solid var(--line); margin-left:6px}
+.rhythm li{list-style:none; padding:0 0 20px 22px; position:relative}
+.rhythm li:last-child{padding-bottom:0}
+.rhythm li::before{
+  content:""; position:absolute; left:-7px; top:7px; width:12px; height:12px;
+  border-radius:50%; background:var(--accent); border:3px solid var(--bg);
+}
+.rhythm b{display:block; font-size:15px; letter-spacing:-.01em}
+.rhythm span{color:var(--muted); font-size:14.5px}
+
+/* stop / go */
+.sg{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:640px){.sg{grid-template-columns:1fr}}
+.sg .pane{border-radius:12px; padding:18px; border:1px solid var(--line); min-width:0}
+.sg .stop{background:var(--stop-soft); border-color:color-mix(in srgb, var(--stop) 24%, transparent)}
+.sg .go{background:var(--go-soft); border-color:color-mix(in srgb, var(--go) 24%, transparent)}
+.sg h3{
+  font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  margin:0 0 12px;
+}
+.sg .stop h3{color:var(--stop)}
+.sg .go h3{color:var(--go)}
+.sg ul{margin:0; padding:0; list-style:none; display:grid; gap:11px}
+.sg li{font-size:14.5px; line-height:1.5; padding-left:20px; position:relative}
+.sg li::before{position:absolute; left:0; top:0; font-weight:700}
+.sg .stop li::before{content:"✕"; color:var(--stop)}
+.sg .go li::before{content:"✓"; color:var(--go)}
+
+/* commitment checklist */
+.pledge{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:20px 20px 16px;
+}
+.pledge ol{margin:0; padding:0; list-style:none; display:grid; gap:2px}
+.pledge li{min-width:0}
+.pledge label{
+  display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:start;
+  padding:10px 8px; border-radius:9px; cursor:pointer; font-size:15px; line-height:1.5;
+}
+.pledge label:hover{background:var(--surface-2)}
+.pledge input{
+  width:19px; height:19px; margin:3px 0 0; accent-color:var(--accent); cursor:pointer;
+}
+.pledge input:checked + span{color:var(--muted); text-decoration:line-through; text-decoration-thickness:1px}
+.pledge .foot{
+  margin:12px 0 0; padding-top:12px; border-top:1px solid var(--line);
+  font-size:12.5px; color:var(--muted);
+}
+
+/* models */
+.model{
+  background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:0 12px 12px 0; padding:18px 20px; margin-bottom:14px;
+}
+.model h3{font-size:16px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em}
+.model p{font-size:14.5px; color:var(--muted); margin:0 0 10px}
+.model p:last-child{margin:0}
+.model .pull{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px;
+  color:var(--ink); margin:0; padding-left:14px; border-left:2px solid var(--line);
+}
+.chain{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px}
+.chain b{
+  font-size:12.5px; font-weight:700; background:var(--accent-soft); color:var(--accent);
+  padding:4px 9px; border-radius:7px; letter-spacing:.01em;
+}
+.chain i{font-style:normal; color:var(--muted); align-self:center; font-size:13px}
+
+/* ten lines */
+.ten{counter-reset:t; display:grid; gap:11px; margin:0; padding:0; list-style:none}
+.ten li{
+  counter-increment:t; display:grid; grid-template-columns:30px 1fr; gap:14px;
+  align-items:start; background:var(--surface); border:1px solid var(--line);
+  border-radius:11px; padding:14px 16px; min-width:0;
+}
+.ten li::before{
+  content:counter(t,decimal-leading-zero);
+  font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.03em;
+  font-variant-numeric:tabular-nums; padding-top:3px;
+}
+.ten q{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px; line-height:1.5;
+  quotes:"“" "”";
+}
+
+/* footer */
+footer{background:var(--surface); border-top:1px solid var(--line); padding-block:30px 36px}
+footer .wrap{display:grid; gap:18px}
+.srcs{font-size:13.5px; color:var(--muted); display:grid; gap:5px}
+.srcs b{color:var(--ink); font-weight:700}
+.sig{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  padding-top:16px; border-top:1px solid var(--line);
+}
+.sig .who{font-size:13.5px; line-height:1.45}
+.sig .who b{display:block; font-weight:700}
+.sig .who span{color:var(--muted)}
+.note{
+  font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+  color:var(--muted); background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; margin-left:auto;
+}
+@media (max-width:520px){.note{margin-left:0}}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brandmark" href="#top">
+      <svg width="38" height="38" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <span class="wordmark">
+        <b>Cuongnc</b><span>1504</span>
+        <em>Kho tư liệu đào tạo</em>
+      </span>
+    </a>
+    <nav aria-label="Mục lục">
+      <a href="#bay">Bốn cái bẫy</a>
+      <a href="#mars">MARS</a>
+      <a href="#nhip">Nhịp tuần</a>
+      <a href="#dunglai">Dừng lại</a>
+      <a href="#camket">Cam kết</a>
+      <a href="#camnho">10 câu</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap col">
+    <p class="eyebrow">Ghi chép cá nhân · Học hỏi từ chuyên gia</p>
+    <h1>Jim đã nhắc gì về phát triển MOA</h1>
+    <p class="lede">Những gì tôi giữ lại được sau khi học Jim về cách một GAD kèm cặp một Quản lý
+      Tư vấn viên mới thăng chức: bốn cái bẫy, cách chẩn đoán, và nhịp làm việc hằng tuần.</p>
+    <div class="meta">
+      <span>Chủ đề: Phát triển MOA</span>
+      <span>Ghi chép &amp; diễn giải cá nhân</span>
+      <span>Đọc khoảng 6 phút</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap col">
+
+  <section id="mo-dau">
+    <div class="kicker"><i>MỞ ĐẦU</i></div>
+    <h2>Ba câu đóng đinh</h2>
+    <div class="quotes">
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Một văn phòng mạnh được xây bởi các MOA. Và GAD là người xây các MOA.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>GAD phát triển MOA. MOA phát triển Tư vấn viên.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Có chức danh mà không có khai vấn sẽ tạo ra một Hội sở thứ hai không lương.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="bay">
+    <div class="kicker"><i>01</i></div>
+    <h2>Bốn cái bẫy Jim cảnh báo</h2>
+    <p class="sub">Đây là bốn cách phổ biến nhất khiến một MOA được đề bạt rồi bị bỏ mặc.</p>
+    <div class="grid g4">
+      <div class="card">
+        <span class="tag">Bẫy 1</span>
+        <h3>Đề bạt người bán giỏi nhất</h3>
+        <p>…rồi hy vọng họ tự trở thành quản lý bằng bản năng.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Bẫy 2</span>
+        <h3>Gửi MOA đi học thêm một lớp nữa</h3>
+        <p>…trong khi vấn đề nằm ở <b>vai trò</b>, không phải thiếu kiến thức.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Bẫy 3</span>
+        <h3>Để việc chung của văn phòng thay thế cho nhóm</h3>
+        <p>…khiến MOA rời xa chính những Tư vấn viên mới của mình.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Bẫy 4</span>
+        <h3>Mở một buổi giảng dài mỗi tháng</h3>
+        <p>…rồi gọi đó là phát triển MOA. Giảng không phải là phát triển.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="vaitro">
+    <div class="kicker"><i>02</i></div>
+    <h2>Vai trò số một của MOA là nhóm của chính mình</h2>
+    <p class="sub">Sáu việc Jim liệt kê khi nói MOA “chịu trách nhiệm phát triển với đội
+      nhóm của mình”.</p>
+    <div class="grid g2">
+      <div class="card"><h3>Đồng hành Ngày 6–90</h3><p>Với từng Tư vấn viên mới thuộc nhóm mình.</p></div>
+      <div class="card"><h3>JFW</h3><p>Làm mẫu trước, rồi quan sát. Không làm thay.</p></div>
+      <div class="card"><h3>Chất lượng hồ sơ</h3><p>Hồ sơ đi đường tắt phải trả lại — không ngoại lệ.</p></div>
+      <div class="card"><h3>Hoạt động &amp; tỷ lệ chuyển đổi</h3><p>Theo dõi của từng Tư vấn viên, không gộp cả nhóm.</p></div>
+      <div class="card"><h3>Chuẩn sản lượng</h3><p>2 hợp đồng (Part-time) hoặc 4 hợp đồng (Full-time) mỗi tháng.</p></div>
+      <div class="card"><h3>Chẩn đoán 1-1</h3><p>15–30 phút, gặp riêng, với chính người của mình.</p></div>
+    </div>
+  </section>
+
+  <section id="mars">
+    <div class="kicker"><i>03</i></div>
+    <h2>Soi MARS lên chính MOA</h2>
+    <p class="sub">Jim nhấn mạnh một điều trái với trực giác của phần lớn GAD:
+      <b>điểm nghẽn thường nằm ở Vai trò, không phải Năng lực.</b></p>
+    <div class="mars">
+      <div class="row"><div class="L">M</div><div>
+        <h3>Động lực — Motivation</h3>
+        <p>Họ còn thực sự muốn xây dựng một nhóm không?</p>
+      </div></div>
+      <div class="row"><div class="L">A</div><div>
+        <h3>Năng lực — Ability</h3>
+        <p>Họ có tự chủ trì được buổi chẩn đoán 15–30 phút, JFW và rà soát hồ sơ đạt chuẩn không?</p>
+      </div></div>
+      <div class="row"><div class="L">R</div><div>
+        <h3>Vai trò — Role</h3>
+        <p>Họ có biết việc gì là quan trọng, theo thứ tự nào, tại chính văn phòng này — chứ không
+          phải trên lý thuyết?</p>
+      </div></div>
+      <div class="row"><div class="L">S</div><div>
+        <h3>Bối cảnh — Situation</h3>
+        <p>Lịch của văn phòng có bảo vệ thời gian cho nhóm không — hay nuốt hết bằng các cuộc họp?</p>
+      </div></div>
+    </div>
+    <blockquote class="q" style="margin-top:16px"><span class="mk">”</span>
+      <p>Hỏi theo đúng thứ tự, đừng bỏ bước. Câu “không” đầu tiên chỉ ra phương pháp cần dùng.</p>
+    </blockquote>
+  </section>
+
+  <section id="hotro">
+    <div class="kicker"><i>04</i></div>
+    <h2>Bốn cách hỗ trợ — áp dụng cho MOA đúng như cho một Tư vấn viên</h2>
+    <p class="sub">Chẩn đoán MARS trước. Rồi mới chọn một trong bốn cách dưới đây.</p>
+    <div class="method">
+      <div class="row">
+        <div class="top">
+          <span class="sig">MOA chưa tự chạy được JFW, chẩn đoán hay rà soát hồ sơ</span>
+          <span class="use">Đào tạo</span>
+        </div>
+        <p class="why">thiếu Năng lực / KASH. Dạy kỹ năng, rồi quan sát họ làm.</p>
+      </div>
+      <div class="row">
+        <div class="top">
+          <span class="sig">MOA chưa biết một nhóm tốt tại đây trông như thế nào</span>
+          <span class="use">Dẫn dắt</span>
+        </div>
+        <p class="why">khoảng trống nằm ở Vai trò — cho đi cùng một MOA đang có kết quả.</p>
+      </div>
+      <div class="row">
+        <div class="top">
+          <span class="sig">MOA biết việc, nhưng kết quả của nhóm vẫn yếu</span>
+          <span class="use">Khai vấn</span>
+        </div>
+        <p class="why">vấn đề là năng lượng và thứ tự ưu tiên. Đừng thêm một khóa học nữa.</p>
+      </div>
+      <div class="row">
+        <div class="top">
+          <span class="sig">MOA đang khủng hoảng cá nhân hoặc quá tải</span>
+          <span class="use">Chuyển tiếp + thiết kế lại</span>
+        </div>
+        <p class="why">bảo vệ nhóm, sắp xếp lại khối lượng việc. Anh/chị không phải chuyên gia
+          tham vấn của họ.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="nhip">
+    <div class="kicker"><i>05</i></div>
+    <h2>Nhịp làm việc của GAD với từng MOA</h2>
+    <p class="sub">Mô hình trung tâm của cả buổi học. Ngắn, đều đặn, cụ thể — đúng như cách
+      GAD yêu cầu MOA làm với Tư vấn viên.</p>
+    <ul class="rhythm">
+      <li><b>Hằng tuần — 20 phút</b><span>Với từng MOA: danh sách đúng tiến độ / chậm tiến độ ·
+        mỗi Tư vấn viên mới đang theo phương pháp nào · <b>một</b> bước tiếp theo.</span></li>
+      <li><b>Hằng tháng — 45 phút</b><span>Rà soát vai trò và số giờ thực tế đã dùng cho nhóm;
+        sắp xếp lại nếu việc khác đang nuốt mất phần của nhóm.</span></li>
+      <li><b>Hằng quý</b><span>KASH của MOA — ai đã sẵn sàng nhận thêm trách nhiệm, ai nên giao
+        lại bớt.</span></li>
+      <li><b>Luôn luôn</b><span>GAD làm mẫu buổi chẩn đoán 15–30 phút.</span></li>
+    </ul>
+    <blockquote class="q" style="margin-top:20px"><span class="mk">”</span>
+      <p>MOA sẽ sao chép đúng những gì họ thấy anh/chị làm.</p>
+    </blockquote>
+  </section>
+
+  <section id="giolam">
+    <div class="kicker"><i>06</i></div>
+    <h2>Bảo vệ giờ dành cho nhóm</h2>
+    <p class="sub">Jim yêu cầu viết tỷ lệ phân bổ thời gian ra <b>một trang giấy</b>
+      và rà soát hằng tháng.</p>
+    <div class="grid g2">
+      <div class="card"><span class="tag">Thứ Hai – Thứ Năm</span>
+        <h3>Buổi sáng dành cho nhóm</h3>
+        <p>Các buổi 1-1. JFW. Rà soát hồ sơ. Đi thực địa cùng Tư vấn viên mới.</p></div>
+      <div class="card"><span class="tag">Một ngày cố định</span>
+        <h3>Khối việc hành chính &amp; họp chung</h3>
+        <p>Gom vào cùng một ngày mỗi tuần, không rải rác khắp lịch.</p></div>
+      <div class="card"><span class="tag">Thứ Sáu</span>
+        <h3>Bảng theo dõi</h3>
+        <p>Các con số · đúng tiến độ hay chậm tiến độ · phương pháp tuần tới cho từng Tư vấn viên mới.</p></div>
+      <div class="card"><span class="tag">Quy tắc của GAD</span>
+        <h3>Không để buổi 1-1 bị hủy</h3>
+        <p>Nếu một việc khác hủy mất buổi 1-1 của MOA, GAD phải nhận ra — và sắp xếp lại.</p></div>
+    </div>
+  </section>
+
+  <section id="dunglai">
+    <div class="kicker"><i>07</i></div>
+    <h2>Dừng lại — và hãy làm thay vào đó</h2>
+    <p class="sub">Bốn cặp đối chiếu Jim đưa ra ở phần cuối.</p>
+    <div class="sg">
+      <div class="pane stop">
+        <h3>Dừng lại</h3>
+        <ul>
+          <li>Giao thêm việc chung khi MOA chưa vững nền tảng quản lý nhóm</li>
+          <li>Để người khác làm thay JFW hoặc ký duyệt hồ sơ của MOA</li>
+          <li>Đo tuyển dụng chỉ bằng số chứng chỉ được cấp</li>
+          <li>Mở một buổi giảng dài mỗi tháng rồi gọi đó là phát triển MOA</li>
+        </ul>
+      </div>
+      <div class="pane go">
+        <h3>Hãy làm</h3>
+        <ul>
+          <li>Giữ nguyên tiêu chuẩn vận hành của nhóm, dù MOA đang bận việc gì</li>
+          <li>Ghép một MOA mới với một MOA kinh nghiệm dẫn dắt trong 90 ngày</li>
+          <li>Viết tỷ lệ phân bổ thời gian ra một trang giấy và rà soát hằng tháng</li>
+          <li>Dùng MARS trước khi gửi bất kỳ MOA nào đi “học thêm”</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="camket">
+    <div class="kicker"><i>08</i></div>
+    <h2>Cam kết của GAD — sáu dòng để ký</h2>
+    <p class="sub">Tích vào ô đã làm được. Đánh dấu chỉ lưu trên máy của anh/chị.</p>
+    <div class="pledge">
+      <ol>
+        <li><label><input type="checkbox" id="pl1"><span>Giữ <b>nhóm của chính MOA</b> là ưu tiên số một.</span></label></li>
+        <li><label><input type="checkbox" id="pl2"><span>Dùng <b>MARS</b> trước khi gửi một MOA đi học thêm.</span></label></li>
+        <li><label><input type="checkbox" id="pl3"><span>Duy trì <b>20 phút mỗi tuần</b> với từng MOA: con người · cách xử lý · bước tiếp theo.</span></label></li>
+        <li><label><input type="checkbox" id="pl4"><span>Viết <b>tỷ lệ phân bổ thời gian</b> ra giấy và rà soát hằng tháng.</span></label></li>
+        <li><label><input type="checkbox" id="pl5"><span>Ghép một <b>MOA mới với một MOA kinh nghiệm</b> dẫn dắt trong 90 ngày.</span></label></li>
+        <li><label><input type="checkbox" id="pl6"><span>Không để ai làm thay <b>JFW</b>, việc <b>ký duyệt hồ sơ</b> hay <b>ranh giới coaching</b> của MOA.</span></label></li>
+      </ol>
+      <p class="foot" id="plcount">Đã đánh dấu 0 / 6</p>
+    </div>
+  </section>
+
+  <section id="mohinh">
+    <div class="kicker"><i>09</i></div>
+    <h2>Ba mô hình GAD dùng để dạy MOA</h2>
+    <p class="sub">Ba mô hình Jim áp dụng thẳng vào việc phát triển MOA.</p>
+
+    <div class="model">
+      <h3>MARS → KASH</h3>
+      <div class="chain"><b>Năng lực</b><i>→</i><b>Vai trò</b><i>→</i><b>Động lực</b><i>→</i><b>Bối cảnh</b></div>
+      <p>Hỏi theo đúng thứ tự này. Chỉ khi điểm nghẽn rơi vào <b>Năng lực</b> mới soi tiếp KASH:
+        Kiến thức (sản phẩm, FNA, phép tính hoạt động) · Thái độ (phẩm chất, giữ lời hứa, tư duy
+        phát triển) · Kỹ năng (tự làm được sau khi đã xem) · Thói quen (biết phải làm gì, nhưng
+        không làm đều mỗi tuần).</p>
+    </div>
+
+    <div class="model">
+      <h3>MIICEP — mô hình điều phối</h3>
+      <div class="chain">
+        <b>Motivate</b><i>→</i><b>Inform</b><i>→</i><b>Illustrate</b><i>→</i>
+        <b>Clarify</b><i>→</i><b>Elaborate</b><i>→</i><b>Praise</b>
+      </div>
+      <p>Vì sao &amp; hậu quả → chỉ nội dung cốt lõi → làm mẫu, đóng vai, video → kiểm tra hiểu
+        trước khi đi tiếp → họ nói ra cách sẽ áp dụng → ghi nhận <b>nỗ lực</b>, không chỉ kết quả.</p>
+      <p class="pull">Thiếu một bước, người học chỉ có ghi chép, chưa có kỹ năng.</p>
+    </div>
+
+    <div class="model">
+      <h3>Người điều phối, không phải người thuyết giảng</h3>
+      <p>Sở hữu <b>tiến trình</b>, không sở hữu nội dung · làm mẫu rồi để họ thử · thành công là
+        kỹ năng được dùng ngoài thực địa, không phải chạy hết slide.</p>
+      <p class="pull">Lớp học không gắn với thực địa chỉ là trình diễn.</p>
+    </div>
+  </section>
+
+  <section id="camnho">
+    <div class="kicker"><i>10</i></div>
+    <h2>Mười câu nên nhớ</h2>
+    <p class="sub">Nếu chỉ giữ lại một trang, tôi giữ trang này.</p>
+    <ol class="ten">
+      <li><q>Một văn phòng mạnh được xây bởi các MOA. Và GAD là người xây các MOA.</q></li>
+      <li><q>Đề bạt người bán giỏi nhất rồi hy vọng họ tự trở thành quản lý bằng bản năng.</q></li>
+      <li><q>Điểm nghẽn thường là Vai trò — không phải Năng lực.</q></li>
+      <li><q>Họ không thể làm điều chưa từng được dạy.</q></li>
+      <li><q>Họ đã học xong mà kết quả vẫn yếu — đó là khai vấn, không phải thêm một khóa học nữa.</q></li>
+      <li><q>Hãy viết ra tỷ lệ phân bổ thời gian. Một trang giấy. Rà soát hằng tháng.</q></li>
+      <li><q>MOA sẽ sao chép đúng những gì họ thấy anh/chị làm.</q></li>
+      <li><q>Anh/Chị đào tạo MOA theo đúng cách yêu cầu họ đào tạo Tư vấn viên — ngắn, đều đặn, cụ thể.</q></li>
+      <li><q>Đào tạo là then chốt. Nhưng đào tạo sai là lòng tốt đắt đỏ.</q></li>
+      <li><q>Chẩn đoán trước. Rồi mới hỗ trợ. Rồi mới điều phối.</q></li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap col">
+    <div class="srcs">
+      <div><b>Về trang này:</b> ghi chép cá nhân sau khi học Jim về phát triển đội ngũ quản lý.
+        Nội dung đã được tôi diễn giải và sắp xếp lại theo cách hiểu của mình, không phải bản sao
+        tài liệu gốc.</div>
+      <div>Mô hình MARS phỏng theo McShane &amp; Von Glinow.</div>
+    </div>
+    <div class="sig">
+      <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <div class="who">
+        <b>Tóm tắt &amp; biên soạn: Nguyễn Chí Cương</b>
+        <span>cuongnc1504@gmail.com · Zalo 0945 789 292</span>
+      </div>
+      <span class="note">Ghi chép cá nhân</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.pledge input'));
+  var out = document.getElementById('plcount');
+  var KEY = 'jimkee-moa-pledge';
+
+  function read(){
+    try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; }
+    catch (e) { return {}; }
+  }
+  function save(state){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  function paint(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    out.textContent = 'Đã đánh dấu ' + n + ' / ' + boxes.length;
+  }
+
+  var saved = read();
+  boxes.forEach(function(b){
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', function(){
+      var s = read();
+      s[b.id] = b.checked;
+      save(s);
+      paint();
+    });
+  });
+  paint();
+})();
+</script>
+
+</body>
+</html>
