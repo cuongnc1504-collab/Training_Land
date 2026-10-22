@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cuongnc1504 — Kho tư liệu đào tạo</title>
+<meta name="description" content="Những ghi chép cá nhân về đào tạo và phát triển đội ngũ — mỗi bài một trang, đọc trong 6 đến 7 phút.">
+<meta name="author" content="Nguyễn Chí Cương">
+<meta name="theme-color" content="#0C1A26">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2044%2044%22%3E%3Crect%20width%3D%2244%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22%230C1A26%22/%3E%3Cpath%20d%3D%22M27%2013.34%20A10%2010%200%201%200%2027%2030.66%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22/%3E%3Ccircle%20cx%3D%2231.6%22%20cy%3D%2222%22%20r%3D%222.4%22%20fill%3D%22%231577C8%22/%3E%3C/svg%3E">
+<link rel="canonical" href="https://cuongnc1504-collab.github.io/Training_Land/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Cuongnc1504 — Kho tư liệu đào tạo">
+<meta property="og:title" content="Cuongnc1504 — Kho tư liệu đào tạo">
+<meta property="og:description" content="Những ghi chép cá nhân về đào tạo và phát triển đội ngũ — mỗi bài một trang, đọc trong 6 đến 7 phút.">
+<meta property="og:url" content="https://cuongnc1504-collab.github.io/Training_Land/">
+<meta property="og:image" content="https://cuongnc1504-collab.github.io/Training_Land/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,500;1,500&display=swap">
+
+<style>
+/* Layout: kệ sách — mỗi bài một hàng, ảnh bìa bên trái, màu của bài làm vạch nhận diện. */
+:root{
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+
+  --bg:#F4F7FA;
+  --surface:#FFFFFF;
+  --surface-2:#EAF1F7;
+  --ink:#0C1A26;
+  --muted:#566B7E;
+  --line:#D9E3EC;
+  --accent:#1577C8;
+  --accent-soft:#E4F0FA;
+  --mark:#0C1A26;
+  --c1:#1577C8;
+  --c2:#0B7C55;
+  --c3:#B04A20;
+  --shadow:0 1px 2px rgba(12,26,38,.05), 0 10px 30px -16px rgba(12,26,38,.25);
+  --f-sans:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-serif:"Lora",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+    --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+    --accent:#4FA6EE; --accent-soft:#132737; --mark:#16242F;
+    --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -18px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+  --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+  --accent:#4FA6EE; --accent-soft:#132737; --mark:#16242F;
+  --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--f-sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px);
+  background:var(--surface); z-index:30;
+}
+img{max-width:100%}
+.wrap{
+  max-width:900px; margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+
+/* header */
+.bar{position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+     background:var(--surface); border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex; align-items:center; gap:14px; padding-block:11px}
+.brandmark{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+.brandmark svg{display:block; flex:none}
+.wordmark{line-height:1.1}
+.wordmark b{font-weight:800; letter-spacing:-.02em; font-size:15px}
+.wordmark span{font-weight:500; color:var(--accent); font-size:15px}
+.wordmark em{display:block; font-style:normal; font-size:10.5px; letter-spacing:.1em;
+             text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:1px}
+.count{margin-left:auto; font-size:12.5px; font-weight:600; color:var(--muted);
+       background:var(--surface-2); border:1px solid var(--line);
+       padding:4px 11px; border-radius:999px; white-space:nowrap}
+
+/* hero */
+.hero{background:var(--surface); border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:44px 38px; max-width:760px}
+.eyebrow{font-size:11.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+         color:var(--accent); margin:0 0 14px}
+h1{font-weight:800; letter-spacing:-.025em; font-size:clamp(30px,6vw,48px); line-height:1.1;
+   margin:0 0 16px; text-wrap:balance}
+.lede{font-size:17px; color:var(--muted); margin:0; max-width:58ch}
+
+/* danh sách bài */
+main{padding-block:38px 10px}
+.secttl{display:flex; align-items:baseline; gap:12px; margin:0 0 20px; max-width:900px}
+.secttl h2{font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+           margin:0; color:var(--muted)}
+.secttl hr{flex:1; border:0; border-top:1px solid var(--line); margin:0}
+
+.list{display:grid; gap:18px; margin:0; padding:0; list-style:none}
+.item{min-width:0}
+.item a{
+  display:grid; grid-template-columns:286px 1fr; gap:0;
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  overflow:hidden; text-decoration:none; color:inherit; box-shadow:var(--shadow);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.item a:hover{transform:translateY(-2px); border-color:var(--c)}
+.item a:focus-visible{outline:2px solid var(--c); outline-offset:3px}
+.thumb{position:relative; background:var(--surface-2); min-width:0}
+.thumb img{display:block; width:100%; height:100%; object-fit:cover; aspect-ratio:1200/630}
+.body{padding:20px 22px 18px; min-width:0; display:flex; flex-direction:column; gap:9px}
+.stripe{height:4px; background:var(--c); border-radius:999px; width:52px}
+.item h3{font-size:19px; font-weight:800; letter-spacing:-.018em; line-height:1.28; margin:0;
+         text-wrap:balance}
+.item p{font-size:14.5px; color:var(--muted); margin:0}
+.foot{display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:auto; padding-top:6px}
+.chip{font-size:11.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+      color:var(--c); background:var(--surface-2); border:1px solid var(--line);
+      padding:4px 10px; border-radius:999px}
+.go{margin-left:auto; font-size:14px; font-weight:700; color:var(--c); white-space:nowrap}
+.item1{--c:var(--c1)} .item2{--c:var(--c2)} .item3{--c:var(--c3)}
+@media (max-width:700px){
+  .item a{grid-template-columns:1fr}
+  .body{padding:17px 18px 16px}
+  .go{margin-left:0}
+}
+@media (prefers-reduced-motion: reduce){.item a{transition:none} .item a:hover{transform:none}}
+
+/* footer */
+footer{background:var(--surface); border-top:1px solid var(--line); margin-top:40px;
+       padding-block:30px 36px}
+footer .wrap{display:grid; gap:16px; max-width:760px}
+.about{font-size:14px; color:var(--muted); margin:0}
+.sig{display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+     padding-top:16px; border-top:1px solid var(--line)}
+.who{font-size:13.5px; line-height:1.45}
+.who b{display:block; font-weight:700}
+.who span{color:var(--muted)}
+.note{font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+      color:var(--muted); background:var(--surface-2); border:1px solid var(--line);
+      padding:4px 10px; border-radius:999px; margin-left:auto}
+@media (max-width:520px){.note{margin-left:0}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brandmark" href="./">
+      <svg width="38" height="38" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <span class="wordmark">
+        <b>Cuongnc</b><span>1504</span>
+        <em>Kho tư liệu đào tạo</em>
+      </span>
+    </a>
+    <span class="count">3 bài</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Ghi chép cá nhân · Học hỏi từ chuyên gia</p>
+    <h1>Những gì tôi giữ lại sau mỗi lần học</h1>
+    <p class="lede">Mỗi bài là một trang: đọc trong 6 đến 7 phút, có bảng, có mô hình, và có một
+      danh sách để tự đánh dấu. Viết cho người làm đào tạo và phát triển đội ngũ.</p>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="secttl"><h2>Bài viết</h2><hr></div>
+
+  <ul class="list">
+    <li class="item item1">
+      <a href="bai-viet/phat-trien-moa/">
+        <div class="thumb">
+          <img src="bai-viet/phat-trien-moa/cover.png" width="1200" height="630"
+               alt="Ảnh bìa bài Phát triển MOA" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="stripe"></div>
+          <h3>Jim đã nhắc gì về phát triển MOA</h3>
+          <p>Bốn cái bẫy khi đề bạt một quản lý mới, cách soi MARS để tìm đúng điểm nghẽn,
+            và nhịp 20 phút mỗi tuần giữ cho việc kèm cặp không đứt.</p>
+          <div class="foot">
+            <span class="chip">Phát triển MOA</span>
+            <span class="chip">6 phút đọc</span>
+            <span class="go">Đọc bài →</span>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li class="item item2">
+      <a href="bai-viet/tvv-90-ngay/">
+        <div class="thumb">
+          <img src="bai-viet/tvv-90-ngay/cover.png" width="1200" height="630"
+               alt="Ảnh bìa bài Hệ thống 90 ngày cho Tư vấn viên mới" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="stripe"></div>
+          <h3>Biến lớp OB thành một hệ thống vận hành</h3>
+          <p>90 ngày đầu của một Tư vấn viên mới: hai lộ trình 12 giờ và 55 giờ, bảng hai phễu,
+            công thức giờ giảm dần, và bốn bước JFW.</p>
+          <div class="foot">
+            <span class="chip">Tư vấn viên mới</span>
+            <span class="chip">7 phút đọc</span>
+            <span class="go">Đọc bài →</span>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li class="item item3">
+      <a href="bai-viet/nguoi-dao-tao/">
+        <div class="thumb">
+          <img src="bai-viet/nguoi-dao-tao/cover.png" width="1200" height="630"
+               alt="Ảnh bìa bài Khi nào đào tạo là câu trả lời" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="stripe"></div>
+          <h3>Khi nào đào tạo là câu trả lời</h3>
+          <p>Bốn cách hỗ trợ một con người, buổi chẩn đoán 15 phút trước khi mở lớp,
+            ranh giới tham vấn, và sáu bước MIICEP để người học dùng được ngoài thực địa.</p>
+          <div class="foot">
+            <span class="chip">Người đào tạo</span>
+            <span class="chip">7 phút đọc</span>
+            <span class="go">Đọc bài →</span>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="about">Đây là nơi tôi lưu lại những gì học được từ các chuyên gia trong nghề, viết
+      lại theo cách hiểu của mình để dùng được trong công việc hằng ngày. Nội dung sẽ còn thêm.</p>
+    <div class="sig">
+      <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <div class="who">
+        <b>Nguyễn Chí Cương</b>
+        <span>cuongnc1504@gmail.com · Zalo 0945 789 292</span>
+      </div>
+      <span class="note">Ghi chép cá nhân</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
