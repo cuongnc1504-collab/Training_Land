@@ -4,6 +4,12 @@ Kho tư liệu đào tạo của **Cuongnc1504** — lưu trữ những ghi ché
 
 Xem trực tiếp: https://cuongnc1504-collab.github.io/Training_Land/
 
+## Chương trình đào tạo
+
+| Chương trình | Địa chỉ |
+|---|---|
+| Kỹ năng Thuyết trình — Nói rõ, nói gọn, nói thuyết phục | [chuong-trinh/ky-nang-thuyet-trinh/](https://cuongnc1504-collab.github.io/Training_Land/chuong-trinh/ky-nang-thuyet-trinh/) |
+
 ## Bài viết
 
 | Bài | Địa chỉ |
@@ -18,6 +24,10 @@ Xem trực tiếp: https://cuongnc1504-collab.github.io/Training_Land/
 index.html              trang chủ, danh sách bài viết
 cover.png               ảnh bìa trang chủ khi chia sẻ link
 .nojekyll               để GitHub Pages phục vụ file tĩnh nguyên trạng
+chuong-trinh/
+  <ten-chuong-trinh>/
+    index.html          trang giới thiệu chương trình
+    cover.png           ảnh bìa 1200x630
 bai-viet/
   <ten-bai>/
     index.html          nội dung bài

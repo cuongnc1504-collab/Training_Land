@@ -44,6 +44,7 @@
   --c1:#1577C8;
   --c2:#0B7C55;
   --c3:#B04A20;
+  --c4:#C9441B;
   --shadow:0 1px 2px rgba(12,26,38,.05), 0 10px 30px -16px rgba(12,26,38,.25);
   --f-sans:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
   --f-serif:"Lora",Georgia,"Times New Roman",serif;
@@ -53,7 +54,7 @@
     --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
     --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
     --accent:#4FA6EE; --accent-soft:#132737; --mark:#16242F;
-    --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E;
+    --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E; --c4:#F08A66;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -18px rgba(0,0,0,.7);
     color-scheme:dark;
   }
@@ -62,7 +63,7 @@
   --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
   --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
   --accent:#4FA6EE; --accent-soft:#132737; --mark:#16242F;
-  --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E;
+  --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E; --c4:#F08A66;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -18px rgba(0,0,0,.7);
   color-scheme:dark;
 }
@@ -137,7 +138,8 @@ main{padding-block:38px 10px}
       color:var(--c); background:var(--surface-2); border:1px solid var(--line);
       padding:4px 10px; border-radius:999px}
 .go{margin-left:auto; font-size:14px; font-weight:700; color:var(--c); white-space:nowrap}
-.item1{--c:var(--c1)} .item2{--c:var(--c2)} .item3{--c:var(--c3)}
+.item1{--c:var(--c1)} .item2{--c:var(--c2)} .item3{--c:var(--c3)} .item4{--c:var(--c4)}
+.section + .section{margin-top:44px}
 @media (max-width:700px){
   .item a{grid-template-columns:1fr}
   .body{padding:17px 18px 16px}
@@ -177,13 +179,13 @@ footer .wrap{display:grid; gap:16px; max-width:760px}
         <em>Kho tư liệu đào tạo</em>
       </span>
     </a>
-    <span class="count">3 bài</span>
+    <span class="count">1 chương trình · 3 bài</span>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <p class="eyebrow">Ghi chép cá nhân · Học hỏi từ chuyên gia</p>
+    <p class="eyebrow">Ghi chép cá nhân · Chương trình đào tạo</p>
     <h1>Những gì tôi giữ lại sau mỗi lần học</h1>
     <p class="lede">Mỗi bài là một trang: đọc trong 6 đến 7 phút, có bảng, có mô hình, và có một
       danh sách để tự đánh dấu. Viết cho người làm đào tạo và phát triển đội ngũ.</p>
@@ -191,6 +193,33 @@ footer .wrap{display:grid; gap:16px; max-width:760px}
 </div>
 
 <main class="wrap">
+  <div class="section" id="chuong-trinh">
+  <div class="secttl"><h2>Chương trình đào tạo</h2><hr></div>
+
+  <ul class="list">
+    <li class="item item4">
+      <a href="chuong-trinh/ky-nang-thuyet-trinh/">
+        <div class="thumb">
+          <img src="chuong-trinh/ky-nang-thuyet-trinh/cover.png" width="1200" height="630"
+               alt="Ảnh bìa chương trình Kỹ năng Thuyết trình" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="stripe"></div>
+          <h3>Kỹ năng Thuyết trình: Nói rõ – Nói gọn – Nói thuyết phục</h3>
+          <p>Chương trình 1 ngày cho bạn trẻ, giáo viên, nhân viên văn phòng và MC: chín mô hình
+            đơn giản theo trục TRƯỚC – TRONG – SAU, một nửa thời lượng là thực hành.</p>
+          <div class="foot">
+            <span class="chip">Huấn luyện kỹ năng</span>
+            <span class="chip">1 ngày</span>
+            <span class="go">Xem chương trình →</span>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  </div>
+
+  <div class="section" id="bai-viet">
   <div class="secttl"><h2>Bài viết</h2><hr></div>
 
   <ul class="list">
@@ -254,6 +283,7 @@ footer .wrap{display:grid; gap:16px; max-width:760px}
       </a>
     </li>
   </ul>
+  </div>
 </main>
 
 <footer>
