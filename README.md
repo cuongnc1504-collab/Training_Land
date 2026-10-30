@@ -9,6 +9,7 @@ Xem trực tiếp: https://cuongnc1504-collab.github.io/Training_Land/
 | Chương trình | Địa chỉ |
 |---|---|
 | Kỹ năng Thuyết trình — Nói rõ, nói gọn, nói thuyết phục | [chuong-trinh/ky-nang-thuyet-trinh/](https://cuongnc1504-collab.github.io/Training_Land/chuong-trinh/ky-nang-thuyet-trinh/) |
+| AI cho giáo viên tiểu học — Soạn nhanh, dạy vui | [chuong-trinh/ai-giao-vien-tieu-hoc/](https://cuongnc1504-collab.github.io/Training_Land/chuong-trinh/ai-giao-vien-tieu-hoc/) |
 
 ## Bài viết
 
