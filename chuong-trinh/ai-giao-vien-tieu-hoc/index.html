@@ -241,6 +241,28 @@ section{padding-block:64px 8px}
 @media (max-width:640px){#vi-du .row{grid-template-columns:1fr}}
 .dot{font-size:17px}
 
+
+/* chuẩn bị */
+.prep{display:grid; grid-template-columns:1.5fr 1fr; gap:18px}
+@media (max-width:820px){.prep{grid-template-columns:1fr}}
+.prep-main,.prep-kit{border-radius:18px; padding:24px 28px}
+.prep-main{background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow)}
+.prep-kit{background:var(--night); color:var(--night-ink)}
+.prep h3{font-size:20px; font-weight:800; margin:0 0 12px; color:var(--accent)}
+.prep-kit h3{color:var(--sun)}
+.prep ol{margin:0; padding-left:22px}
+.prep ol li{margin:8px 0; color:var(--muted)}
+.prep ol li b{color:var(--ink)}
+.prep-kit ul{list-style:none; margin:0; padding:0}
+.prep-kit li{position:relative; padding-left:28px; margin:10px 0; color:var(--night-ink)}
+.prep-kit li::before{content:""; position:absolute; left:2px; top:6px; width:12px; height:7px;
+  border-left:2.5px solid var(--sun); border-bottom:2.5px solid var(--sun); transform:rotate(-45deg)}
+.prep-ex{display:flex; gap:18px; align-items:baseline; margin-top:18px; padding:18px 24px; border-radius:14px; background:var(--surface-2)}
+.prep-ex span{font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); flex:none}
+.prep-ex p{margin:0}
+.prep-tip{margin:14px 0 0; color:var(--muted); font-size:15px}
+@media (max-width:560px){.prep-ex{flex-direction:column; gap:6px}}
+
 /* FAQ */
 details{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:4px 20px;
   margin-bottom:10px}
@@ -285,6 +307,7 @@ footer .back{margin-left:auto}
       <a href="#doi-tuong">Dành cho ai</a>
       <a href="#hai-khong-gian">Trên lớp · Về nhà</a>
       <a href="#cau-truc">Cấu trúc</a>
+      <a href="#chuan-bi">Chuẩn bị</a>
       <a href="slides/">Xem slide</a>
       <a href="#hoi-dap">Hỏi đáp</a>
       <a class="cta-mini" href="#lien-he">Đăng ký</a>
@@ -433,6 +456,42 @@ footer .back{margin-left:auto}
   </div>
 </section>
 
+<section id="chuan-bi">
+  <div class="wrap">
+    <div class="sh">
+      <p class="eyebrow">Chuẩn bị trước buổi tập huấn</p>
+      <h2>Mỗi thầy cô mang theo một bài học thật</h2>
+      <p>Bài học thật giúp sản phẩm cuối buổi dùng được ngay cho tiết dạy tuần tới. Nhà trường gửi phần này cho giáo viên ít nhất 3 ngày trước buổi học.</p>
+    </div>
+    <div class="prep">
+      <div class="prep-main">
+        <h3>Nội dung để làm trò chơi và bài trắc nghiệm</h3>
+        <ol>
+          <li><b>Chọn một bài sắp dạy</b> trong 1–2 tuần tới: ghi rõ lớp, môn, tên bài, bộ sách.</li>
+          <li><b>Chụp rõ 1–2 trang sách giáo khoa</b> của bài đó, hoặc chuẩn bị file Word, PDF nội dung bài.</li>
+          <li><b>Ghi 3–5 ý trọng tâm</b> học sinh cần nhớ, kèm 5–10 từ khóa, từ vựng hoặc phép tính.</li>
+          <li><b>Nghĩ trước cách dùng:</b> phần nào chơi trên lớp, phần nào giao về nhà ôn luyện.</li>
+        </ol>
+      </div>
+      <div class="prep-kit">
+        <h3>Thiết bị và tài khoản</h3>
+        <ul>
+          <li>Máy tính xách tay có mạng, mang theo sạc</li>
+          <li>Tài khoản Gmail, nhớ mật khẩu</li>
+          <li>Điện thoại để chụp ảnh trang sách</li>
+          <li>Đăng nhập thử gemini.google.com trước một ngày</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prep-ex">
+      <span>Ví dụ</span>
+      <p><b>Lớp 2 · Toán · Bảng nhân 2.</b> Trọng tâm: 10 phép tính từ 2 × 1 đến 2 × 10 và 2 bài toán có lời văn.
+        Trên lớp: đua tốc độ theo đội. Về nhà: 10 câu trắc nghiệm ôn tập.</p>
+    </div>
+    <p class="prep-tip">Mẹo: chụp ảnh thẳng, đủ sáng, không bị cắt chữ. AI đọc ảnh rõ thì tạo câu hỏi chính xác hơn.</p>
+  </div>
+</section>
+
 <section id="vi-du">
   <div class="wrap">
     <div class="sh">
@@ -454,14 +513,14 @@ footer .back{margin-left:auto}
   <div class="wrap">
     <div class="sh">
       <p class="eyebrow">Xem trước bài giảng</p>
-      <h2>Lật thử 8 slide trong bộ 20 slide</h2>
-      <p>Quy trình, hai không gian sử dụng, bảng công cụ, ví dụ theo lớp và câu lệnh mẫu. Bấm vào một slide để mở trình xem.</p>
+      <h2>Lật thử 9 slide trong bộ 21 slide</h2>
+      <p>Phần chuẩn bị, quy trình, hai không gian sử dụng, bảng công cụ, ví dụ theo lớp và câu lệnh mẫu. Bấm vào một slide để mở trình xem.</p>
     </div>
     <div class="thumbs">
-      <a class="thumb" href="slides/#3"><img src="slides/thumb-03.jpg" width="640" height="360" alt="Slide Trên lớp chơi vui, về nhà ôn chắc" loading="lazy"><span>Trên lớp · Về nhà <i>· 3</i></span></a>
-      <a class="thumb" href="slides/#4"><img src="slides/thumb-04.jpg" width="640" height="360" alt="Slide bảng bảy công cụ" loading="lazy"><span>Bảy công cụ <i>· 4</i></span></a>
-      <a class="thumb" href="slides/#6"><img src="slides/thumb-06.jpg" width="640" height="360" alt="Slide câu lệnh mẫu soạn câu hỏi trắc nghiệm" loading="lazy"><span>Câu lệnh mẫu <i>· 6</i></span></a>
-      <a class="thumb" href="slides/#8"><img src="slides/thumb-08.jpg" width="640" height="360" alt="Slide gửi link bài ôn về nhà" loading="lazy"><span>Gửi link về nhà <i>· 8</i></span></a>
+      <a class="thumb" href="slides/#2"><img src="slides/thumb-02.jpg" width="640" height="360" alt="Slide chuẩn bị trước buổi tập huấn" loading="lazy"><span>Chuẩn bị trước <i>· 2</i></span></a>
+      <a class="thumb" href="slides/#4"><img src="slides/thumb-04.jpg" width="640" height="360" alt="Slide Trên lớp chơi vui, về nhà ôn chắc" loading="lazy"><span>Trên lớp · Về nhà <i>· 4</i></span></a>
+      <a class="thumb" href="slides/#7"><img src="slides/thumb-07.jpg" width="640" height="360" alt="Slide câu lệnh mẫu soạn câu hỏi trắc nghiệm" loading="lazy"><span>Câu lệnh mẫu <i>· 7</i></span></a>
+      <a class="thumb" href="slides/#9"><img src="slides/thumb-09.jpg" width="640" height="360" alt="Slide gửi link bài ôn về nhà" loading="lazy"><span>Gửi link về nhà <i>· 9</i></span></a>
     </div>
     <div class="preview-cta">
       <a class="btn btn-main" href="slides/">Xem bản xem trước →</a>
@@ -486,7 +545,7 @@ footer .back{margin-left:auto}
     </details>
     <details>
       <summary>Cần chuẩn bị gì cho buổi tập huấn?</summary>
-      <p>Máy tính có mạng, tài khoản Gmail, điện thoại để chụp ảnh và một trang sách giáo khoa của bài sắp dạy.</p>
+      <p>Một bài học sắp dạy (ảnh 1–2 trang sách, 3–5 ý trọng tâm) cùng máy tính có mạng, tài khoản Gmail và điện thoại. Chi tiết ở mục <a href="#chuan-bi">Chuẩn bị trước buổi tập huấn</a>.</p>
     </details>
     <details>
       <summary>Có tổ chức riêng cho trường hoặc cụm trường không?</summary>
