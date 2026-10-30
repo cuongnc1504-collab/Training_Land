@@ -28,6 +28,7 @@ chuong-trinh/
   <ten-chuong-trinh>/
     index.html          trang giới thiệu chương trình
     cover.png           ảnh bìa 1200x630
+    slides/             trình xem bản xem trước (ảnh slide, PDF xem trước)
 bai-viet/
   <ten-bai>/
     index.html          nội dung bài

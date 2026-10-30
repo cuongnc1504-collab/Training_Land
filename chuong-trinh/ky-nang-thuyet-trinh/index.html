@@ -205,6 +205,19 @@ section{padding-block:64px 8px}
 .quote{margin:26px 0 0; padding:22px 26px; border-radius:16px; background:var(--surface-2);
   font-family:var(--f-serif); font-style:italic; font-size:20px; line-height:1.5}
 
+/* xem trước slide */
+.thumbs{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+@media (max-width:860px){.thumbs{grid-template-columns:repeat(2,1fr)}}
+.thumb{display:block; border-radius:12px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow);
+  background:var(--surface); text-decoration:none; transition:transform .15s ease}
+.thumb:hover{transform:translateY(-2px)}
+.thumb img{display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover}
+.thumb span{display:block; padding:9px 12px; font-size:13.5px; font-weight:700}
+.thumb span i{font-style:normal; color:var(--muted); font-weight:600}
+.preview-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:22px}
+.btn-line{border-color:var(--line); color:var(--ink); background:var(--surface)}
+@media (prefers-reduced-motion: reduce){.thumb{transition:none}.thumb:hover{transform:none}}
+
 /* FAQ */
 details{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:4px 20px;
   margin-bottom:10px}
@@ -250,6 +263,7 @@ footer .back{margin-left:auto}
       <a href="#cau-truc">Cấu trúc</a>
       <a href="#lich-trinh">Lịch trình</a>
       <a href="#mo-hinh">9 mô hình</a>
+      <a href="slides/">Xem slide</a>
       <a href="#hoi-dap">Hỏi đáp</a>
       <a class="cta-mini" href="#lien-he">Đăng ký</a>
     </nav>
@@ -265,7 +279,7 @@ footer .back{margin-left:auto}
       đơn giản, sắp theo trục TRƯỚC – TRONG – SAU, kèm một nửa thời lượng là thực hành.</p>
     <div class="btns">
       <a class="btn btn-main" href="#lien-he">Đăng ký tổ chức lớp →</a>
-      <a class="btn btn-ghost" href="#cau-truc">Xem cấu trúc chương trình</a>
+      <a class="btn btn-ghost" href="slides/">Xem trước bộ slide</a>
     </div>
     <div class="facts" role="list">
       <div class="fact" role="listitem"><b>1 ngày</b><span>08:30 – 17:00, 4 phiên</span></div>
@@ -402,6 +416,26 @@ footer .back{margin-left:auto}
       <div class="model"><i>Trước</i><b>Móc câu và lời kêu gọi</b><span>Câu hỏi, con số, câu chuyện → một việc cụ thể</span></div>
       <div class="model"><i>Trong</i><b>Mô hình 3V</b><span>Lời nói, giọng nói, hình ảnh cùng nói một điều</span></div>
       <div class="model"><i>Sau</i><b>Hỏi đáp 4 bước</b><span>Lắng nghe – Ghi nhận – Trả lời ngắn – Kiểm tra</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="xem-truoc">
+  <div class="wrap">
+    <div class="sh">
+      <p class="eyebrow">Xem trước bài giảng</p>
+      <h2>Lật thử 9 slide trong bộ 28 slide</h2>
+      <p>Bìa, mục tiêu, lịch trình, các mô hình tiêu biểu và cheat sheet. Bấm vào một slide để mở trình xem.</p>
+    </div>
+    <div class="thumbs">
+      <a class="thumb" href="slides/#1"><img src="slides/thumb-01.jpg" width="640" height="360" alt="Slide bìa Kỹ năng Thuyết trình" loading="lazy"><span>Bìa <i>· 1</i></span></a>
+      <a class="thumb" href="slides/#4"><img src="slides/thumb-04.jpg" width="640" height="360" alt="Slide Ba trụ cột thuyết phục" loading="lazy"><span>Ba trụ cột thuyết phục <i>· 4</i></span></a>
+      <a class="thumb" href="slides/#6"><img src="slides/thumb-06.jpg" width="640" height="360" alt="Slide khung PREP" loading="lazy"><span>Khung PREP <i>· 6</i></span></a>
+      <a class="thumb" href="slides/#9"><img src="slides/thumb-09.jpg" width="640" height="360" alt="Slide cheat sheet 9 mô hình" loading="lazy"><span>Cheat sheet <i>· 9</i></span></a>
+    </div>
+    <div class="preview-cta">
+      <a class="btn btn-main" href="slides/">Xem bản xem trước →</a>
+      <a class="btn btn-line" href="slides/ky-nang-thuyet-trinh-xem-truoc.pdf" download>Tải PDF xem trước</a>
     </div>
   </div>
 </section>
