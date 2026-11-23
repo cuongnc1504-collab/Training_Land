@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Một quy trình bán hàng thực sự vận hành</title>
+<meta name="description" content="Ghi chép cá nhân về quy trình bán hàng 12 bước — xin giới thiệu VIPS, Khám Sức khỏe Tài chính, hai phương án, chốt thử và hệ thống chăm sóc khách hàng.">
+<meta name="author" content="Nguyễn Chí Cương">
+<meta name="theme-color" content="#8E1B24">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2044%2044%22%3E%3Crect%20width%3D%2244%22%20height%3D%2244%22%20rx%3D%2212%22%20fill%3D%22%238E1B24%22%2F%3E%3Cpath%20d%3D%22M27%2013.34%20A10%2010%200%201%200%2027%2030.66%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2231.6%22%20cy%3D%2222%22%20r%3D%222.4%22%20fill%3D%22%23C8323C%22%2F%3E%3C%2Fsvg%3E">
+<link rel="canonical" href="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/quy-trinh-ban-hang/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Cuongnc1504 — Kho tư liệu đào tạo">
+<meta property="og:title" content="Một quy trình bán hàng thực sự vận hành">
+<meta property="og:description" content="Ghi chép cá nhân về quy trình bán hàng 12 bước — xin giới thiệu VIPS, Khám Sức khỏe Tài chính, hai phương án, chốt thử và hệ thống chăm sóc khách hàng.">
+<meta property="og:url" content="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/quy-trinh-ban-hang/">
+<meta property="og:image" content="https://cuongnc1504-collab.github.io/Training_Land/bai-viet/quy-trinh-ban-hang/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+:root{ color-scheme:light; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px) }
+body{ margin:0 }
+img{ max-width:100% }
+[hidden]{ display:none !important }
+</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,500;0,600;1,500&display=swap">
+
+<style>
+/* Layout: cột đọc hẹp 72ch trên nền sáng; tông đỏ; các dải trích dẫn tràn ngang;
+   bảng chuyển thành thẻ dọc dưới 720px. */
+:root{
+  --bg:#F4F7FA;
+  --surface:#FFFFFF;
+  --surface-2:#EAF1F7;
+  --ink:#0C1A26;
+  --muted:#566B7E;
+  --line:#D9E3EC;
+  --brand:#8E1B24;
+  --accent:#C8323C;
+  --accent-soft:#FBE9EB;
+  --stop:#A8452F;
+  --stop-soft:#FBEDEA;
+  --go:#136B52;
+  --go-soft:#E4F1EC;
+  --mark:#8E1B24;
+  --shadow:0 1px 2px rgba(12,26,38,.05), 0 8px 24px -12px rgba(12,26,38,.18);
+  --f-sans:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-serif:"Lora", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+    --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+    --brand:#F29AA2; --accent:#F07A84; --accent-soft:#2E1519;
+    --stop:#E59685; --stop-soft:#2A1A17;
+    --go:#64C9A4; --go-soft:#11261F;
+    --mark:#3A1A1E;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
+  --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
+  --brand:#F29AA2; --accent:#F07A84; --accent-soft:#2E1519;
+  --stop:#E59685; --stop-soft:#2A1A17;
+  --go:#64C9A4; --go-soft:#11261F;
+  --mark:#3A1A1E;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--f-sans); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px);
+  background:var(--surface); z-index:30;
+}
+.wrap{
+  max-width:860px; margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+}
+.col{max-width:720px}
+
+/* ---------- header ---------- */
+.bar{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--surface); border-bottom:1px solid var(--line);
+}
+.bar .wrap{
+  display:flex; align-items:center; gap:14px;
+  padding-block:11px; flex-wrap:wrap;
+}
+.brandmark{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
+.brandmark svg{display:block; flex:none}
+.wordmark{line-height:1.1}
+.wordmark b{font-weight:800; letter-spacing:-.02em; font-size:15px}
+.wordmark span{font-weight:500; color:var(--accent); font-size:15px}
+.wordmark em{
+  display:block; font-style:normal; font-size:10.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:1px;
+}
+.bar nav{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
+.bar nav::-webkit-scrollbar{display:none}
+.bar nav a{
+  font-size:12.5px; font-weight:600; color:var(--muted); text-decoration:none;
+  padding:5px 10px; border-radius:999px; white-space:nowrap;
+}
+.bar nav a:hover{color:var(--accent); background:var(--accent-soft)}
+.bar nav a:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--surface); border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:40px 34px}
+.eyebrow{
+  font-size:11.5px; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 14px;
+}
+h1{
+  font-family:var(--f-sans); font-weight:800; letter-spacing:-.025em;
+  font-size:clamp(28px,5.4vw,44px); line-height:1.12; margin:0 0 16px;
+  text-wrap:balance; color:var(--ink);
+}
+.lede{font-size:17px; color:var(--muted); margin:0; max-width:62ch}
+.meta{
+  display:flex; flex-wrap:wrap; gap:8px 10px; margin-top:22px;
+  font-size:12.5px; color:var(--muted);
+}
+.meta span{
+  background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; font-weight:500;
+}
+
+/* ---------- sections ---------- */
+section{padding-block:40px}
+section + section{border-top:1px solid var(--line)}
+.kicker{
+  display:flex; align-items:baseline; gap:10px; margin:0 0 6px;
+}
+.kicker i{
+  font-style:normal; font-family:var(--f-sans); font-weight:800; font-size:12px;
+  color:var(--accent); letter-spacing:.08em;
+}
+h2{
+  font-size:clamp(21px,3.4vw,27px); font-weight:800; letter-spacing:-.02em;
+  margin:0 0 10px; line-height:1.22; text-wrap:balance;
+}
+.sub{color:var(--muted); font-size:15px; margin:0 0 24px; max-width:64ch}
+p{margin:0 0 14px}
+
+/* ---------- quote blocks ---------- */
+.quotes{display:grid; gap:14px; margin-top:4px}
+.q{
+  background:var(--brand); color:#fff; border-radius:14px;
+  padding:22px 24px; position:relative; overflow:hidden;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}}
+:root[data-theme="dark"] .q{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line)}
+.q p{
+  font-family:var(--f-serif); font-style:italic; font-weight:500;
+  font-size:clamp(17px,2.6vw,20px); line-height:1.45; margin:0;
+}
+.q .mk{
+  position:absolute; right:14px; top:-6px; font-family:var(--f-serif);
+  font-size:72px; line-height:1; opacity:.15; pointer-events:none;
+}
+
+/* ---------- cards ---------- */
+.grid{display:grid; gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:620px){.g2,.g4{grid-template-columns:1fr}}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:18px 18px 16px; min-width:0;
+}
+.card h3{
+  font-size:15.5px; font-weight:700; margin:0 0 7px; letter-spacing:-.01em; line-height:1.3;
+}
+.card p{font-size:14.5px; color:var(--muted); margin:0}
+.tag{
+  display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--accent); margin-bottom:9px;
+}
+
+/* MARS letters */
+.mars{display:grid; gap:12px}
+.mars .row{
+  display:grid; grid-template-columns:52px 1fr; gap:16px; align-items:start;
+  background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px;
+}
+.mars .L{
+  font-weight:800; font-size:26px; line-height:1; color:var(--accent);
+  background:var(--accent-soft); border-radius:10px; display:grid; place-items:center;
+  height:52px; letter-spacing:-.02em;
+}
+.mars h3{font-size:14px; margin:0 0 5px; font-weight:700}
+.mars p{font-size:14.5px; color:var(--muted); margin:0}
+@media (max-width:480px){
+  .mars .row{grid-template-columns:40px 1fr; gap:12px; padding:14px}
+  .mars .L{height:40px; font-size:20px}
+}
+
+/* method list */
+.method{display:grid; gap:12px}
+.method .row{
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:16px 18px; display:grid; gap:8px;
+}
+.method .top{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px}
+.method .sig{font-size:14.5px; font-weight:600; flex:1 1 220px; min-width:0}
+.method .use{
+  font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); padding:4px 10px; border-radius:999px;
+  white-space:nowrap;
+}
+.method .why{font-size:14px; color:var(--muted); margin:0; padding-top:2px; border-top:1px dashed var(--line)}
+.method .why::before{content:"Bởi vì "; font-weight:600; color:var(--ink)}
+
+/* rhythm timeline */
+.rhythm{display:grid; gap:0; border-left:2px solid var(--line); margin-left:6px}
+.rhythm li{list-style:none; padding:0 0 20px 22px; position:relative}
+.rhythm li:last-child{padding-bottom:0}
+.rhythm li::before{
+  content:""; position:absolute; left:-7px; top:7px; width:12px; height:12px;
+  border-radius:50%; background:var(--accent); border:3px solid var(--bg);
+}
+.rhythm b{display:block; font-size:15px; letter-spacing:-.01em}
+.rhythm span{color:var(--muted); font-size:14.5px}
+
+/* stop / go */
+.sg{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+@media (max-width:640px){.sg{grid-template-columns:1fr}}
+.sg .pane{border-radius:12px; padding:18px; border:1px solid var(--line); min-width:0}
+.sg .stop{background:var(--stop-soft); border-color:color-mix(in srgb, var(--stop) 24%, transparent)}
+.sg .go{background:var(--go-soft); border-color:color-mix(in srgb, var(--go) 24%, transparent)}
+.sg h3{
+  font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  margin:0 0 12px;
+}
+.sg .stop h3{color:var(--stop)}
+.sg .go h3{color:var(--go)}
+.sg ul{margin:0; padding:0; list-style:none; display:grid; gap:11px}
+.sg li{font-size:14.5px; line-height:1.5; padding-left:20px; position:relative}
+.sg li::before{position:absolute; left:0; top:0; font-weight:700}
+.sg .stop li::before{content:"✕"; color:var(--stop)}
+.sg .go li::before{content:"✓"; color:var(--go)}
+
+/* commitment checklist */
+.pledge{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:20px 20px 16px;
+}
+.pledge ol{margin:0; padding:0; list-style:none; display:grid; gap:2px}
+.pledge li{min-width:0}
+.pledge label{
+  display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:start;
+  padding:10px 8px; border-radius:9px; cursor:pointer; font-size:15px; line-height:1.5;
+}
+.pledge label:hover{background:var(--surface-2)}
+.pledge input{
+  width:19px; height:19px; margin:3px 0 0; accent-color:var(--accent); cursor:pointer;
+}
+.pledge input:checked + span{color:var(--muted); text-decoration:line-through; text-decoration-thickness:1px}
+.pledge .foot{
+  margin:12px 0 0; padding-top:12px; border-top:1px solid var(--line);
+  font-size:12.5px; color:var(--muted);
+}
+
+/* models */
+.model{
+  background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:0 12px 12px 0; padding:18px 20px; margin-bottom:14px;
+}
+.model h3{font-size:16px; font-weight:800; margin:0 0 8px; letter-spacing:-.01em}
+.model p{font-size:14.5px; color:var(--muted); margin:0 0 10px}
+.model p:last-child{margin:0}
+.model .pull{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px;
+  color:var(--ink); margin:0; padding-left:14px; border-left:2px solid var(--line);
+}
+.chain{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px}
+.chain b{
+  font-size:12.5px; font-weight:700; background:var(--accent-soft); color:var(--accent);
+  padding:4px 9px; border-radius:7px; letter-spacing:.01em;
+}
+.chain i{font-style:normal; color:var(--muted); align-self:center; font-size:13px}
+
+/* ten lines */
+.ten{counter-reset:t; display:grid; gap:11px; margin:0; padding:0; list-style:none}
+.ten li{
+  counter-increment:t; display:grid; grid-template-columns:30px 1fr; gap:14px;
+  align-items:start; background:var(--surface); border:1px solid var(--line);
+  border-radius:11px; padding:14px 16px; min-width:0;
+}
+.ten li::before{
+  content:counter(t,decimal-leading-zero);
+  font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.03em;
+  font-variant-numeric:tabular-nums; padding-top:3px;
+}
+.ten q{
+  font-family:var(--f-serif); font-style:italic; font-size:15.5px; line-height:1.5;
+  quotes:"“" "”";
+}
+
+/* footer */
+footer{background:var(--surface); border-top:1px solid var(--line); padding-block:30px 36px}
+footer .wrap{display:grid; gap:18px}
+.srcs{font-size:13.5px; color:var(--muted); display:grid; gap:5px}
+.srcs b{color:var(--ink); font-weight:700}
+.sig{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  padding-top:16px; border-top:1px solid var(--line);
+}
+.sig .who{font-size:13.5px; line-height:1.45}
+.sig .who b{display:block; font-weight:700}
+.sig .who span{color:var(--muted)}
+.note{
+  font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+  color:var(--muted); background:var(--surface-2); border:1px solid var(--line);
+  padding:4px 10px; border-radius:999px; margin-left:auto;
+}
+@media (max-width:520px){.note{margin-left:0}}
+</style>
+
+<style>
+.tblwrap{overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:560px; font-size:14.5px}
+th{text-align:left; font-weight:800; font-size:11.5px; letter-spacing:.07em; text-transform:uppercase;
+   color:var(--accent); background:var(--accent-soft); padding:11px 14px; white-space:nowrap}
+td{padding:11px 14px; border-top:1px solid var(--line); vertical-align:top}
+tbody tr:nth-child(even){background:var(--surface-2)}
+.num{font-variant-numeric:tabular-nums; text-align:center; white-space:nowrap}
+.rowlab{font-weight:700; white-space:nowrap}
+.scrollhint{font-size:12.5px; color:var(--muted); margin:8px 0 0}
+.map{display:grid; gap:10px}
+.map .r{display:grid; grid-template-columns:1fr 1fr 1fr; gap:0;
+        border:1px solid var(--line); border-radius:11px; overflow:hidden; background:var(--surface)}
+.map .c{padding:13px 15px; min-width:0; font-size:14px; border-left:1px solid var(--line)}
+.map .c:first-child{border-left:0}
+.map .h{background:var(--surface-2); font-weight:700; font-size:11.5px; letter-spacing:.07em;
+        text-transform:uppercase; color:var(--muted); padding:9px 15px}
+.map .bad{color:var(--stop)}
+.map .good{font-weight:600}
+@media (max-width:640px){
+  .map .r{grid-template-columns:1fr}
+  .map .c{border-left:0; border-top:1px solid var(--line)}
+  .map .c:first-child{border-top:0; background:var(--surface-2); font-weight:700}
+  .map .r.head{display:none}
+}
+</style>
+<style>
+.steps{counter-reset:s; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none}
+@media (max-width:640px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.steps li{counter-increment:s; background:var(--surface); border:1px solid var(--line); border-radius:11px;
+  padding:12px 14px; font-size:14px; font-weight:600; line-height:1.4; min-width:0}
+.steps li::before{content:counter(s,decimal-leading-zero); display:block; font-size:11.5px; font-weight:800;
+  color:var(--accent); letter-spacing:.06em; margin-bottom:4px}
+.steps li.ref{background:var(--accent-soft); border-color:color-mix(in srgb, var(--accent) 30%, transparent)}
+.loopnote{font-size:14px; color:var(--muted); margin:14px 0 0}
+.stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px}
+@media (max-width:560px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; min-width:0}
+.stat b{display:block; font-size:28px; font-weight:800; letter-spacing:-.02em; color:var(--accent); line-height:1.1}
+.stat span{font-size:14px; color:var(--muted)}
+.prio{display:grid; gap:8px; margin:0 0 18px; padding:0; list-style:none}
+.prio li{display:flex; align-items:baseline; gap:12px; background:var(--surface); border:1px solid var(--line);
+  border-radius:11px; padding:12px 16px; font-size:15px}
+.prio li b{color:var(--accent); font-size:13px; font-weight:800; letter-spacing:.06em; min-width:22px}
+.prio li em{font-style:normal; color:var(--muted); font-size:13.5px; margin-left:auto}
+.script{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-top:14px}
+.script .tag{margin-bottom:6px}
+.script p{font-family:var(--f-serif); font-style:italic; font-size:15.5px; line-height:1.55; margin:0}
+</style>
+<header class="bar">
+  <div class="wrap">
+    <a class="brandmark" href="https://cuongnc1504-collab.github.io/Training_Land/" title="Về trang chủ kho tư liệu">
+      <svg width="38" height="38" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <span class="wordmark">
+        <b>Cuongnc</b><span>1504</span>
+        <em>Kho tư liệu đào tạo</em>
+      </span>
+    </a>
+    <nav aria-label="Mục lục">
+      <a href="#mbuoc">12 bước</a>
+      <a href="#vips">VIPS</a>
+      <a href="#fhc">Khám Sức khỏe Tài chính</a>
+      <a href="#phuongan">Hai phương án</a>
+      <a href="#chamsoc">Chăm sóc</a>
+      <a href="#camnho">10 câu</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap col">
+    <p class="eyebrow">Ghi chép cá nhân · Học hỏi từ chuyên gia</p>
+    <h1>Một quy trình bán hàng thực sự vận hành</h1>
+    <p class="lede">Những gì tôi giữ lại sau khi học Jim về quy trình bán hàng 12 bước — từ danh sách
+      khách hàng đầu tiên đến lời giới thiệu khiến vòng quay tự chạy lại từ đầu.</p>
+    <div class="meta">
+      <span>Chủ đề: Quy trình bán hàng</span>
+      <span>Ghi chép &amp; diễn giải cá nhân</span>
+      <span>Đọc khoảng 7 phút</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap col">
+
+  <section id="mo-dau">
+    <div class="kicker"><i>MỞ ĐẦU</i></div>
+    <h2>Ba câu đóng đinh</h2>
+    <div class="quotes">
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Khách hàng hài lòng sẽ mua thêm và giới thiệu thêm.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Nhiều cái “Có” nhỏ sẽ dẫn tới cái “Có” cuối cùng.</p>
+      </blockquote>
+      <blockquote class="q"><span class="mk">”</span>
+        <p>Tôi chỉ đề xuất giải pháp mà chính tôi sẽ chọn nếu ở vị trí của anh/chị.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="visao">
+    <div class="kicker"><i>01</i></div>
+    <h2>Vì sao cần một quy trình bán hàng</h2>
+    <p class="sub">Jim mở đầu bằng một câu hỏi cho cả lớp: quy trình chuẩn mang lại gì cho từng bên?
+      Câu trả lời cho thấy đây không chỉ là chuyện của người bán.</p>
+    <div class="grid g2">
+      <div class="card"><span class="tag">Cơ quan quản lý</span><h3>Bán hàng minh bạch, có kiểm soát</h3>
+        <p>Mỗi hồ sơ đi qua đủ các bước bắt buộc, không có đường tắt.</p></div>
+      <div class="card"><span class="tag">Công ty &amp; người quản lý</span><h3>Một ngôn ngữ chung</h3>
+        <p>Biết Tư vấn viên đang ở bước nào để kèm cặp đúng chỗ, thay vì đoán.</p></div>
+      <div class="card"><span class="tag">Tư vấn viên</span><h3>Biết bước tiếp theo là gì</h3>
+        <p>Ít lời từ chối hơn, vì khách hàng đã cùng đi qua từng bước.</p></div>
+      <div class="card"><span class="tag">Khách hàng</span><h3>Được tư vấn như với bác sĩ</h3>
+        <p>Hiểu vì sao mình mua, mua gì, và biết sẽ được chăm sóc tiếp.</p></div>
+    </div>
+  </section>
+
+  <section id="mbuoc">
+    <div class="kicker"><i>02</i></div>
+    <h2>Mười hai bước, một vòng khép kín</h2>
+    <p class="sub">Ba bước cuối đều kết thúc bằng việc xin giới thiệu — nguồn khách hàng mới quay về
+      bước đầu tiên.</p>
+    <ol class="steps">
+      <li>Xây dựng danh sách khách hàng tiềm năng</li>
+      <li>Tiếp cận để có cuộc hẹn</li>
+      <li>Gặp gỡ khách hàng lần đầu</li>
+      <li>Thu thập thông tin khách hàng</li>
+      <li>Phân tích nhu cầu</li>
+      <li>Xây dựng và đóng gói giải pháp</li>
+      <li>Trình bày giải pháp</li>
+      <li>Chốt thử</li>
+      <li>Xử lý từ chối</li>
+      <li class="ref">Trao hợp đồng &amp; xin giới thiệu</li>
+      <li class="ref">Đánh giá định kỳ &amp; xin giới thiệu</li>
+      <li class="ref">Chăm sóc khách hàng &amp; xin giới thiệu</li>
+    </ol>
+    <p class="loopnote">Ba ô tô màu là ba bước tạo ra lời giới thiệu.</p>
+  </section>
+
+  <section id="vips">
+    <div class="kicker"><i>03</i></div>
+    <h2>Danh sách đầu tiên và hệ thống VIPS</h2>
+    <p class="sub">Bắt đầu từ danh sách thân quen — gia đình, bạn bè, đồng nghiệp. Rồi làm thật tốt
+      để được giới thiệu. Với người thân, chỉ cần một câu: <b>“Anh/chị cho em trình bày thử nhé?”</b></p>
+    <p class="sub">Để xin giới thiệu, Jim dùng hệ thống VIPS của Bill Cates — bốn bước, theo đúng thứ tự:</p>
+    <div class="mars">
+      <div class="row"><div class="L">V</div><div>
+        <h3>Trao đổi về giá trị</h3>
+        <p>Hỏi khách cảm thấy thế nào về dịch vụ vừa nhận, và điều gì họ đặc biệt thích.</p>
+      </div></div>
+      <div class="row"><div class="L">I</div><div>
+        <h3>Câu hỏi quan trọng</h3>
+        <p>Xin phép hỏi một câu “rất quan trọng” — để khách tập trung.</p>
+      </div></div>
+      <div class="row"><div class="L">P</div><div>
+        <h3>Xin phép</h3>
+        <p>Được cùng khách nghĩ tên những người họ quan tâm, những người cũng có lợi từ dịch vụ này.</p>
+      </div></div>
+      <div class="row"><div class="L">S</div><div>
+        <h3>Gợi ý tên hoặc nhóm</h3>
+        <p>Gợi ý một nhóm cụ thể khách đã nhắc tới: bạn chơi golf mỗi sáng thứ Bảy, đồng nghiệp cũ…</p>
+      </div></div>
+    </div>
+    <div class="script"><span class="tag">Thêm một câu</span>
+      <p>“Điều anh/chị yêu quý hoặc trân trọng nhất ở người đó là gì?” — câu này giúp lời giới thiệu
+        dễ biến thành một cuộc hẹn.</p></div>
+  </section>
+
+  <section id="hen">
+    <div class="kicker"><i>04</i></div>
+    <h2>Cuộc gọi xin hẹn: ba nhịp</h2>
+    <p class="sub">Gọi cho người được giới thiệu không phải để bán, mà để “ứng tuyển”.</p>
+    <ul class="rhythm">
+      <li><b>1 · Mở đầu bằng người giới thiệu</b><span>Giới thiệu bản thân và nhắc tên người đã giới
+        thiệu mình.</span></li>
+      <li><b>2 · Chia sẻ lời khen</b><span>Kể lại những điều tốt đẹp người giới thiệu đã nói về họ.</span></li>
+      <li><b>3 · Đề nghị 30 phút</b><span>Xin một buổi trao đổi để “ứng tuyển” vào vị trí Cố vấn Bảo hiểm
+        Cá nhân của họ — rồi hỏi: “Anh/chị thấy thế nào ạ?”</span></li>
+    </ul>
+  </section>
+
+  <section id="fhc">
+    <div class="kicker"><i>05</i></div>
+    <h2>Buổi gặp đầu tiên: Tư vấn viên giống như bác sĩ</h2>
+    <p class="sub">Bắt đầu bằng câu chuyện “vì sao” mình vào nghề. Sau đó giới thiệu quy trình
+      Khám Sức khỏe Tài chính 6 bước bằng sức mạnh của liên tưởng.</p>
+    <div class="map">
+      <div class="r head">
+        <div class="c h">Bước</div>
+        <div class="c h">Như bác sĩ…</div>
+        <div class="c h">…Tư vấn viên cũng vậy</div>
+      </div>
+      <div class="r"><div class="c good">1 · Quan hệ &amp; niềm tin</div><div class="c">Ta tin bác sĩ.</div>
+        <div class="c">Phải giành được niềm tin: chỉ hứa điều làm được, minh bạch suốt quá trình.</div></div>
+      <div class="r"><div class="c good">2 · Thu thập dữ liệu</div><div class="c">Lấy mẫu máu, nước tiểu.</div>
+        <div class="c">Thu thập dữ liệu tài chính quan trọng.</div></div>
+      <div class="r"><div class="c good">3 · Phân tích</div><div class="c">Nhận kết quả xét nghiệm.</div>
+        <div class="c">Báo lại sức khỏe tài chính của khách.</div></div>
+      <div class="r"><div class="c good">4 · Đề xuất</div><div class="c">Chỉ số tốt thì báo tin vui; chưa tốt thì khuyến nghị.</div>
+        <div class="c">Tốt thì báo tin vui; chưa tốt thì đưa các lựa chọn cải thiện.</div></div>
+      <div class="r"><div class="c good">5 · Triển khai</div><div class="c">Bệnh nhân quyết định có làm theo.</div>
+        <div class="c">Khách toàn quyền chọn phương án mình thấy thoải mái.</div></div>
+      <div class="r"><div class="c good">6 · Đánh giá &amp; giới thiệu</div><div class="c">Khám định kỳ hằng năm.</div>
+        <div class="c">Khám lại hằng năm và khi có thay đổi lớn: em bé, thăng chức, thưởng lớn.</div></div>
+    </div>
+  </section>
+
+  <section id="loihua">
+    <div class="kicker"><i>06</i></div>
+    <h2>Ba lời hứa trước khi hỏi câu đầu tiên</h2>
+    <p class="sub">Xây niềm tin trước, thu thập dữ liệu sau.</p>
+    <div class="grid g2">
+      <div class="card"><span class="tag">Lời hứa 1</span><h3>Bảo mật tuyệt đối</h3>
+        <p>Kể cả người giới thiệu có hỏi, cũng không nói gì nếu chưa được phép.</p></div>
+      <div class="card"><span class="tag">Lời hứa 2</span><h3>Dữ liệu đúng, phân tích mới đúng</h3>
+        <p>Bản phân tích chỉ chính xác bằng dữ liệu khách cung cấp.</p></div>
+      <div class="card"><span class="tag">Lời hứa 3</span><h3>Đề xuất như cho chính mình</h3>
+        <p>Chỉ đề xuất điều mình sẽ chọn nếu ở vị trí của khách.</p></div>
+      <div class="card"><span class="tag">Lưu ý</span><h3>Tiếp cận “não phải”</h3>
+        <p>Chuyển ý mượt và nói rõ “vì sao” trước mỗi phần khai thác thông tin, nhất là mục tiêu Bảo vệ
+          và Tiết kiệm. Có hai cách để hỏi ra ngân sách.</p></div>
+    </div>
+  </section>
+
+  <section id="phantich">
+    <div class="kicker"><i>07</i></div>
+    <h2>Chia sẻ phân tích: khen trước, khoảng trống sau</h2>
+    <p class="sub">Khách quan và minh bạch như bác sĩ với bệnh nhân.</p>
+    <ul class="rhythm">
+      <li><b>Kiểm lại thông tin cá nhân</b><span>Bảo đảm mọi dữ liệu đều đúng.</span></li>
+      <li><b>Mục tiêu — nơi khách muốn đến</b><span>Bắt đầu từ điều khách mong muốn.</span></li>
+      <li><b>Hiện tại — nơi khách đang đứng</b><span>Ghi nhận những gì họ đã làm tốt: tiết kiệm đều,
+        lo cho bố mẹ, bắt đầu tích lũy cho con, đã có bảo vệ.</span></li>
+      <li><b>Khoảng trống</b><span>So hai điểm với nhau, rồi cùng đi qua từng khoảng trống.</span></li>
+    </ul>
+  </section>
+
+  <section id="phuongan">
+    <div class="kicker"><i>08</i></div>
+    <h2>Đóng gói giải pháp và luôn có hai phương án</h2>
+    <p class="sub">Lấy khách hàng làm trọng tâm, và đi đúng thứ tự ưu tiên:</p>
+    <ol class="prio">
+      <li><b>01</b>Bảo vệ<em>Ưu tiên số 1</em></li>
+      <li><b>02</b>Tiết kiệm</li>
+      <li><b>03</b>Đầu tư</li>
+    </ol>
+    <div class="sg">
+      <div class="pane go">
+        <h3>Phương án 1</h3>
+        <ul><li>Theo <b>ngân sách khách đưa ra</b> — đúng giải pháp khách yêu cầu.</li></ul>
+      </div>
+      <div class="pane go">
+        <h3>Phương án 2</h3>
+        <ul><li>Theo <b>khả năng chi trả</b> — như thể mình đứng ở vị trí của khách.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="chotthu">
+    <div class="kicker"><i>09</i></div>
+    <h2>Chốt thử và xử lý từ chối</h2>
+    <p class="sub">Chốt càng tự nhiên càng tốt. Với quy trình Khám Sức khỏe Tài chính, lời từ chối
+      giảm hẳn — vì khách đã hợp tác với mình suốt từ đầu.</p>
+    <div class="script"><span class="tag">Câu chốt thử</span>
+      <p>“Giữa phương án 1 và phương án 2, anh/chị thích phương án nào hơn?”</p></div>
+    <div class="script"><span class="tag">Bước đầu tiên</span>
+      <p>“Mình bắt đầu bằng việc bảo đảm anh/chị đủ điều kiện được bảo hiểm. Em sắp xếp buổi khám
+        sức khỏe — sáng thứ Ba tuần sau lúc 9 giờ có tiện cho anh/chị không?”</p></div>
+  </section>
+
+  <section id="traohd">
+    <div class="kicker"><i>10</i></div>
+    <h2>Trao hợp đồng tận tay</h2>
+    <p class="sub">Kể cả khi khách đã nhận hợp đồng qua email, việc trao tận tay vẫn quan trọng.</p>
+    <div class="grid g4">
+      <div class="card"><span class="tag">01</span><h3>Chúc mừng khách hàng</h3><p>Ghi nhận quyết định của họ.</p></div>
+      <div class="card"><span class="tag">02</span><h3>Nhắc lại “vì sao”</h3><p>Mục tiêu khiến họ tham gia.</p></div>
+      <div class="card"><span class="tag">03</span><h3>Nhấn mạnh điểm chính</h3>
+        <p>Để khách hiểu đã mua gì. Trấn an: nếu quên, chỉ cần một cuộc gọi.</p></div>
+      <div class="card"><span class="tag">04</span><h3>Xin giới thiệu</h3><p>Lúc khách hài lòng nhất.</p></div>
+    </div>
+  </section>
+
+  <section id="danhgia">
+    <div class="kicker"><i>11</i></div>
+    <h2>Đánh giá định kỳ: hẹn trước một năm</h2>
+    <p class="sub">Đặt lịch ngay khi chốt hoặc khi trao hợp đồng. Gửi lời nhắc 2 tuần trước ngày hẹn.
+      Ngoài lịch hằng năm, gặp lại khi hoàn cảnh thay đổi: đổi việc, có thêm thành viên.</p>
+    <ul class="rhythm">
+      <li><b>Xem lại mục tiêu</b><span>Còn như cũ hay đã thay đổi?</span></li>
+      <li><b>Cập nhật thông tin</b><span>Theo tình hình công việc và gia đình.</span></li>
+      <li><b>Nhắc lại giải pháp đã triển khai</b><span>Cách đây một năm, vì sao chọn nó.</span></li>
+      <li><b>Điều chỉnh nếu cần</b><span>Để giải pháp tiếp tục đúng mục đích.</span></li>
+    </ul>
+  </section>
+
+  <section id="chamsoc">
+    <div class="kicker"><i>12</i></div>
+    <h2>Hệ thống chăm sóc khách hàng</h2>
+    <p class="sub">Công nghệ cao hay thấp đều được, miễn phục vụ kịp thời. Và có một chuẩn phản hồi
+      cho mọi khách hàng, lớn hay nhỏ:</p>
+    <div class="stats">
+      <div class="stat"><b>2 giờ</b><span>Phản hồi, xác nhận đã nhận tin</span></div>
+      <div class="stat"><b>24 giờ</b><span>Câu trả lời sơ bộ</span></div>
+      <div class="stat"><b>48 giờ</b><span>Giải quyết xong, nếu có thể</span></div>
+    </div>
+    <p class="sub" style="margin:22px 0 12px">Phân khách thành ba nhóm, như chương trình ưu đãi thẻ tín dụng:</p>
+    <div class="grid g2">
+      <div class="card"><span class="tag">Nhóm A</span><h3>Đặc biệt nhất</h3>
+        <p>Tần suất và chất lượng cao nhất: bữa ăn hằng tháng hoặc hằng quý, kết nối kinh doanh giữa các khách hàng.</p></div>
+      <div class="card"><span class="tag">Nhóm B</span><h3>Chất lượng tốt</h3>
+        <p>Gặp uống trà hoặc dùng bữa đơn giản mỗi quý hoặc hai lần một năm.</p></div>
+      <div class="card"><span class="tag">Nhóm C</span><h3>Trên mức trung bình</h3>
+        <p>Lời chúc sinh nhật, kỷ niệm, bản tin hằng tháng, đánh giá hằng năm.</p></div>
+      <div class="card"><span class="tag">Gợi ý</span><h3>Hãy sáng tạo</h3>
+        <p>High Tech và High Touch: thử rượu vang, buổi chia sẻ của diễn giả, kết nối khách với nhau.</p></div>
+    </div>
+  </section>
+
+  <section id="tukiem">
+    <div class="kicker"><i>13</i></div>
+    <h2>Tự kiểm quy trình của tôi</h2>
+    <p class="sub">Tích vào ô đã làm được. Đánh dấu chỉ lưu trên máy của anh/chị.</p>
+    <div class="pledge">
+      <ol>
+        <li><label><input type="checkbox" id="qt1"><span>Có <b>danh sách thân quen</b> và xin giới thiệu theo <b>VIPS</b>.</span></label></li>
+        <li><label><input type="checkbox" id="qt2"><span>Gọi xin hẹn đủ <b>ba nhịp</b>: người giới thiệu, lời khen, 30 phút.</span></label></li>
+        <li><label><input type="checkbox" id="qt3"><span>Kể được <b>câu chuyện “vì sao”</b> của mình trong buổi gặp đầu.</span></label></li>
+        <li><label><input type="checkbox" id="qt4"><span>Nói <b>ba lời hứa</b> trước khi khai thác thông tin.</span></label></li>
+        <li><label><input type="checkbox" id="qt5"><span>Chia sẻ phân tích: <b>khen trước, khoảng trống sau</b>.</span></label></li>
+        <li><label><input type="checkbox" id="qt6"><span>Luôn có <b>hai phương án</b>, Bảo vệ đi trước.</span></label></li>
+        <li><label><input type="checkbox" id="qt7"><span><b>Trao hợp đồng tận tay</b> và hẹn đánh giá trước một năm.</span></label></li>
+        <li><label><input type="checkbox" id="qt8"><span>Có <b>chuẩn phản hồi 2 – 24 – 48 giờ</b> và phân nhóm A, B, C.</span></label></li>
+      </ol>
+      <p class="foot" id="plcount">Đã đánh dấu 0 / 8</p>
+    </div>
+  </section>
+
+  <section id="camnho">
+    <div class="kicker"><i>14</i></div>
+    <h2>Mười câu nên nhớ</h2>
+    <p class="sub">Nếu chỉ giữ lại một trang, tôi giữ trang này.</p>
+    <ol class="ten">
+      <li><q>Bắt đầu từ danh sách thân quen. Làm thật tốt để được giới thiệu.</q></li>
+      <li><q>Anh/chị cho em trình bày thử nhé?</q></li>
+      <li><q>Điều anh/chị trân trọng nhất ở người đó là gì?</q></li>
+      <li><q>Em muốn được ứng tuyển vào vị trí Cố vấn Bảo hiểm Cá nhân của anh/chị.</q></li>
+      <li><q>Cũng như anh/chị tin bác sĩ, em cần giành được niềm tin của anh/chị.</q></li>
+      <li><q>Tôi chỉ đề xuất điều mình sẽ chọn nếu ở vị trí của anh/chị.</q></li>
+      <li><q>Bảo vệ luôn là ưu tiên số một.</q></li>
+      <li><q>Nhiều cái “Có” nhỏ dẫn tới cái “Có” cuối cùng.</q></li>
+      <li><q>Khách hàng hài lòng sẽ mua thêm và giới thiệu thêm.</q></li>
+      <li><q>Hai giờ để phản hồi — cho mọi khách hàng, lớn hay nhỏ.</q></li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap col">
+    <div class="srcs">
+      <div><b>Về trang này:</b> ghi chép cá nhân sau khi học Jim về quy trình bán hàng. Nội dung đã được
+        tôi diễn giải và sắp xếp lại theo cách hiểu của mình, không phải bản sao tài liệu gốc.</div>
+      <div>Hệ thống xin giới thiệu VIPS dẫn theo Bill Cates.</div>
+    </div>
+    <div class="sig">
+      <svg width="34" height="34" viewBox="0 0 44 44" aria-hidden="true">
+        <rect width="44" height="44" rx="12" fill="var(--mark)"></rect>
+        <path d="M27 13.34 A10 10 0 1 0 27 30.66" fill="none" stroke="#fff"
+              stroke-width="4.2" stroke-linecap="round"></path>
+        <circle cx="31.6" cy="22" r="2.4" fill="var(--accent)"></circle>
+      </svg>
+      <div class="who">
+        <b>Tóm tắt &amp; biên soạn: Nguyễn Chí Cương</b>
+        <span>cuongnc1504@gmail.com · Zalo 0945 789 292</span>
+      </div>
+      <span class="note">Ghi chép cá nhân</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.pledge input'));
+  var out = document.getElementById('plcount');
+  var KEY = 'quy-trinh-ban-hang-check';
+  function read(){ try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; } }
+  function save(state){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  function paint(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    out.textContent = 'Đã đánh dấu ' + n + ' / ' + boxes.length;
+  }
+  var saved = read();
+  boxes.forEach(function(b){
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', function(){ var s = read(); s[b.id] = b.checked; save(s); paint(); });
+  });
+  paint();
+})();
+</script>
+
+</body>
+</html>

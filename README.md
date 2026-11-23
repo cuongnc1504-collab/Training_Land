@@ -15,6 +15,7 @@ Xem trực tiếp: https://cuongnc1504-collab.github.io/Training_Land/
 
 | Bài | Địa chỉ |
 |---|---|
+| Một quy trình bán hàng thực sự vận hành | [bai-viet/quy-trinh-ban-hang/](https://cuongnc1504-collab.github.io/Training_Land/bai-viet/quy-trinh-ban-hang/) |
 | Jim đã nhắc gì về phát triển MOA | [bai-viet/phat-trien-moa/](https://cuongnc1504-collab.github.io/Training_Land/bai-viet/phat-trien-moa/) |
 | Biến lớp OB thành một hệ thống vận hành | [bai-viet/tvv-90-ngay/](https://cuongnc1504-collab.github.io/Training_Land/bai-viet/tvv-90-ngay/) |
 | Khi nào đào tạo là câu trả lời | [bai-viet/nguoi-dao-tao/](https://cuongnc1504-collab.github.io/Training_Land/bai-viet/nguoi-dao-tao/) |

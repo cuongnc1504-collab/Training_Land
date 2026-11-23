@@ -45,6 +45,7 @@
   --c2:#0B7C55;
   --c3:#B04A20;
   --c4:#C9441B;
+  --c5:#C8323C;
   --shadow:0 1px 2px rgba(12,26,38,.05), 0 10px 30px -16px rgba(12,26,38,.25);
   --f-sans:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
   --f-serif:"Lora",Georgia,"Times New Roman",serif;
@@ -54,7 +55,7 @@
     --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
     --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
     --accent:#4FA6EE; --accent-soft:#132737; --mark:#16242F;
-    --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E; --c4:#F08A66;
+    --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E; --c4:#F08A66; --c5:#F07A84;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -18px rgba(0,0,0,.7);
     color-scheme:dark;
   }
@@ -63,7 +64,7 @@
   --bg:#0A131B; --surface:#111E29; --surface-2:#16242F;
   --ink:#E6EEF5; --muted:#92A6B8; --line:#21333F;
   --accent:#4FA6EE; --accent-soft:#132737; --mark:#16242F;
-  --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E; --c4:#F08A66;
+  --c1:#4FA6EE; --c2:#3FBE8C; --c3:#DD7B4E; --c4:#F08A66; --c5:#F07A84;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 32px -18px rgba(0,0,0,.7);
   color-scheme:dark;
 }
@@ -138,7 +139,7 @@ main{padding-block:38px 10px}
       color:var(--c); background:var(--surface-2); border:1px solid var(--line);
       padding:4px 10px; border-radius:999px}
 .go{margin-left:auto; font-size:14px; font-weight:700; color:var(--c); white-space:nowrap}
-.item1{--c:var(--c1)} .item2{--c:var(--c2)} .item3{--c:var(--c3)} .item4{--c:var(--c4)}
+.item1{--c:var(--c1)} .item2{--c:var(--c2)} .item3{--c:var(--c3)} .item4{--c:var(--c4)} .item5{--c:var(--c5)}
 .section + .section{margin-top:44px}
 @media (max-width:700px){
   .item a{grid-template-columns:1fr}
@@ -179,7 +180,7 @@ footer .wrap{display:grid; gap:16px; max-width:760px}
         <em>Kho tư liệu đào tạo</em>
       </span>
     </a>
-    <span class="count">2 chương trình · 3 bài</span>
+    <span class="count">2 chương trình · 4 bài</span>
   </div>
 </header>
 
@@ -242,6 +243,26 @@ footer .wrap{display:grid; gap:16px; max-width:760px}
   <div class="secttl"><h2>Bài viết</h2><hr></div>
 
   <ul class="list">
+    <li class="item item5">
+      <a href="bai-viet/quy-trinh-ban-hang/">
+        <div class="thumb">
+          <img src="bai-viet/quy-trinh-ban-hang/cover.png" width="1200" height="630"
+               alt="Ảnh bìa bài Một quy trình bán hàng thực sự vận hành" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="stripe"></div>
+          <h3>Một quy trình bán hàng thực sự vận hành</h3>
+          <p>Mười hai bước khép kín: xin giới thiệu theo VIPS, Khám Sức khỏe Tài chính như gặp bác sĩ,
+            luôn có hai phương án, và chuẩn phản hồi 2 – 24 – 48 giờ.</p>
+          <div class="foot">
+            <span class="chip">Quy trình bán hàng</span>
+            <span class="chip">7 phút đọc</span>
+            <span class="go">Đọc bài →</span>
+          </div>
+        </div>
+      </a>
+    </li>
+
     <li class="item item1">
       <a href="bai-viet/phat-trien-moa/">
         <div class="thumb">
